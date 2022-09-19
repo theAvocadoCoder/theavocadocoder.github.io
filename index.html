@@ -6,10 +6,143 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
   <meta name="description" content="theAvocadoCoder" />
+
+  <link rel="stylesheet" href="/dist/output.css">
+  <link rel="stylesheet" href="assets/src/text-animation.css">
+
   <title>theAvocadoCoder</title>
 </head>
 
 <body>
+  <!-- Nav -->
+  <div id="nav" class="sticky top-0 h-1/5 bg-gray-800 text-white">
+    <div class="flex p-4 items-center justify-center">
+      <div class="flex flex-col items-center justify-center">
+        <div class="flex gap-2">
+          <img class="h-10" src="/assets/img/theavocadocoder_image.png" alt="the avocado coder logo" />
+          <div class="flex items-baseline">
+            <a class="text-lg md:text-3xl" href="#"> theAvocadoCoder </a>
+          </div>
+        </div>
+        <div>
+          <a id="home-nav-link" href="/#">Home</a> |
+          <a id="projects-nav-link" href="/#projects">Projects</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Views -->
+  <div id="home" class="block">
+    <!--Profile-->
+    <section class="flex items-center justify-center h-screen bg-gray-50">
+      <div class="flex flex-col gap-4">
+        <div class="object-cover flex items-center justify-center">
+          <img class="h-40 rounded-full" src="/assets/img/profile-image.jpg" alt="image of Kelechi" />
+        </div>
+        <div class="flex self-center text-2xl font-sans font-bold type-effect">
+          <h1 class="type-effect">K, a curious avocado 🥑</h1>
+        </div>
+      </div>
+    </section>
+
+    <!--About-->
+    <section class="h-screen bg-gray-100">
+      <div class="flex items-center justify-center h-full">
+        <div class="flex items-center justify-center h-5/12">
+          <div class="flex text-center bg-gray-300 p-5 w-2/3 h-full rounded-md">
+            <p>
+              I am a full-stack web developer, constantly seeking out fun ways
+              to learn new things. I enjoy novelty and creative expression.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Contact-->
+    <section class="h-screen bg-gray-200">
+      <div class="flex items-center justify-center h-full">
+        <div class="flex flex-col gap-7 items-center justify-center">
+          <h3 class="text-2xl font-sans font-bold">Hit Me Up!</h3>
+
+          <div class="flex gap-7 flex-col md:flex-row">
+            <a href="tel:+2348061116006">
+              <Icon icon="fa:phone" class="h-10 w-10" />
+            </a>
+            <a href="mailto:theavocadocoder@gmail.com?subject=Inquiry%20Email">
+              <Icon icon="fa:envelope" class="h-10 w-10" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div id="projects" class="hidden">
+    <div>
+      <section class="h-full flex flex-col items-center justify-center">
+        <h1 class="text-2xl font-sans font-bold">Welcome, internet stranger!</h1>
+        <div>
+          Here are some of the projects I've worked on. I never feel like a
+          project is ever fully done as there is always room for improvement
+          (hence, the progress values beside the titles). However, these are my
+          works that I think are "complete enough" to grace a public space. I hope
+          you like them :)
+        </div>
+      </section>
+      <section class="flex flex-col justify-center items-center p-5">
+        <div v-for="project of projects" :key="project.id" class="
+            h-3/4
+            w-42
+            rounded-md
+            flex flex-col
+            gap-5
+            bg-gray-100
+            my-5
+            px-10
+            py-5
+          ">
+          <span class="font-bold">{{ project.title }} [{{ project.progress }}%]</span>
+          <div>{{ project.description }}</div>
+          <div>
+            <span>Stack:</span>
+            <div v-for="stack in project.stacks" :key="stack.id">
+              <iconify-icon :icon="stack" class="h-8 w-8"></iconify-icon>
+            </div>
+          </div>
+          <div>
+            <a :target="project.target" :href="project.route">{{
+              project.callToAction
+            }}</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div id="in-progress" class="hidden">
+    <section class="h-screen flex items-center justify-center">
+      <h1>
+        The developer is currently working on this page. How about you look at
+        <a id="go-home" href="/#home">some other pages</a>
+        for now?
+      </h1>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <div class="relative bottom-0 max-w-screen h-24 flex flex-col bg-gray-800">
+    <div class="flex items-center justify-center text-white h-full">
+      <div>
+        <p class="">Made with ❤ by theAvocadoCoder &copy;</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/assets/js/index.js"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
 </body>
 
 </html>
