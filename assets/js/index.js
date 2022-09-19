@@ -1,5 +1,7 @@
 
 const homeNavLink = document.querySelector("#home-nav-link"),
+  aboutNavLink = document.querySelector("#about-nav-link"),
+  contactNavLink = document.querySelector("#contact-nav-link"),
   projectsNavLink = document.querySelector("#projects-nav-link"),
   goHomeLink = document.querySelector("#go-home");
 
@@ -8,6 +10,14 @@ goHomeLink.addEventListener("click", () => {
   document.querySelector("#in-progress").classList.toggle("hidden", true);
 });
 homeNavLink.addEventListener("click", () => {
+  document.querySelector("#home").classList.toggle("hidden", false);
+  document.querySelector("#in-progress").classList.toggle("hidden", true);
+});
+aboutNavLink.addEventListener("click", () => {
+  document.querySelector("#home").classList.toggle("hidden", false);
+  document.querySelector("#in-progress").classList.toggle("hidden", true);
+});
+contactNavLink.addEventListener("click", () => {
   document.querySelector("#home").classList.toggle("hidden", false);
   document.querySelector("#in-progress").classList.toggle("hidden", true);
 });
