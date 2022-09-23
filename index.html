@@ -35,6 +35,8 @@
   </div>
 
   <!-- Views -->
+
+  <!-- Home -->
   <div id="home" class="block -mt-24">
     <!--Profile-->
     <section class="flex items-center justify-center h-screen bg-gray-50">
@@ -81,20 +83,20 @@
     </section>
   </div>
 
+  <!-- Projects -->
   <div id="projects" class="hidden -mt-24">
-    <div>
-      <section class="h-full flex flex-col items-center justify-center">
-        <h1 class="text-2xl font-sans font-bold">Welcome, internet stranger!</h1>
-        <div>
-          Here are some of the projects I've worked on. I never feel like a
-          project is ever fully done as there is always room for improvement
-          (hence, the progress values beside the titles). However, these are my
-          works that I think are "complete enough" to grace a public space. I hope
-          you like them :)
-        </div>
-      </section>
-      <section class="flex flex-col justify-center items-center p-5">
-        <div v-for="project of projects" :key="project.id" class="
+    <section class="h-full flex flex-col items-center justify-center">
+      <h1 class="text-2xl font-sans font-bold">Welcome, internet stranger!</h1>
+      <div>
+        Here are some of the projects I've worked on. I never feel like a
+        project is ever fully done as there is always room for improvement
+        (hence, the progress values beside the titles). However, these are my
+        works that I think are "complete enough" to grace a public space. I hope
+        you like them :)
+      </div>
+    </section>
+    <section class="flex flex-col justify-center items-center p-5">
+      <div v-for="project of projects" :key="project.id" class="
             h-3/4
             w-42
             rounded-md
@@ -105,24 +107,24 @@
             px-10
             py-5
           ">
-          <span class="font-bold">{{ project.title }} [{{ project.progress }}%]</span>
-          <div>{{ project.description }}</div>
-          <div>
-            <span>Stack:</span>
-            <div v-for="stack in project.stacks" :key="stack.id">
-              <iconify-icon :icon="stack" class="h-8 w-8"></iconify-icon>
-            </div>
-          </div>
-          <div>
-            <a :target="project.target" :href="project.route">{{
-              project.callToAction
-            }}</a>
+        <span class="font-bold">{{ project.title }} [{{ project.progress }}%]</span>
+        <div>{{ project.description }}</div>
+        <div>
+          <span>Stack:</span>
+          <div v-for="stack in project.stacks" :key="stack.id">
+            <iconify-icon :icon="stack" class="h-8 w-8"></iconify-icon>
           </div>
         </div>
-      </section>
-    </div>
+        <div>
+          <a :target="project.target" :href="project.route">{{
+              project.callToAction
+            }}</a>
+        </div>
+      </div>
+    </section>
   </div>
 
+  <!-- In Progress -->
   <div id="in-progress" class="hidden -mt-24">
     <section class="h-screen px-16 flex items-center justify-center">
       <h1>
