@@ -9,7 +9,17 @@ function addHighlightColor(activeTab) {
       link.classList.toggle("text-green-600", true);
     }
   });
+}
 
+function clearClassList(element) {
+  const classListLength = element.classList.length;
+  for (let i = 0; i < classListLength; i++) {
+    element.classList.remove(element.classList[0]);
+  }
+}
+
+function openProjectDetails(tile) {
+  document.createElement("div");
 }
 
 
