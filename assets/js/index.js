@@ -43,6 +43,10 @@ const homeTab = document.querySelector("#home"),
   projectsTab = document.querySelector("#projects");
 
 
+/* Grouped Selectors */
+
+const projectTiles = document.querySelectorAll(".project-tile");
+
 /* Event Listeners */
 
 goHomeLink.addEventListener("click", () => {
@@ -78,17 +82,8 @@ projectsNavLink.addEventListener("click", () => {
   addHighlightColor(projectsNavLink);
 });
 
-// function switchTab() {
-//   e.preventDefault();
-  
-//   const homeTab = homeTab,
-//   projectTab = document.querySelector("#project"),
-//   inProgressTab = inProgressTab;
-
-//   if (tab === "home") {
-//     homeTab.classList.toggle("hidden");
-//     inProgressTab.classList.toggle("hidden");
-//  } else if (tab === "in-progress") {
-    
-//   }
-// }
+projectTiles.forEach(tile => {
+  tile.addEventListener("click", () => {
+    openProjectDetails(tile);
+  })
+})
