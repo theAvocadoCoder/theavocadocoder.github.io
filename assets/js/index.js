@@ -37,9 +37,10 @@ const navLinks = [homeNavLink, projectsNavLink, aboutNavLink, contactNavLink];
 /* Tabs & Sections */
 
 const homeTab = document.querySelector("#home"),
-  inProgressTab = document.querySelector("#in-progress"),
   aboutSection = document.querySelector("#about"),
-  contactSection = document.querySelector("#contact");
+  contactSection = document.querySelector("#contact"),
+  inProgressTab = document.querySelector("#in-progress"),
+  projectsTab = document.querySelector("#projects");
 
 
 /* Event Listeners */
