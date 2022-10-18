@@ -1,13 +1,33 @@
 
 /* Functions */
 
-function addHighlightColor(activeTab) {
-  navLinks.forEach(link => {
-    if (link !== activeTab) {
-      link.classList.toggle("text-green-600", false);
-    } else {
-      link.classList.toggle("text-green-600", true);
-    }
+function addHighlightColor() {
+  const toggleColor = (navLink, hash)=>{
+    navLink.id.split("-")[0] === hash
+      ? navLink.classList.toggle("text-green-600", true)
+      : navLink.classList.toggle("text-green-600", false);
+  }
+  switch (location.hash.substring(1)) {
+    case "": 
+      navLinks.forEach(link => toggleColor(link, "home"));
+      break;
+
+    case "about": 
+      navLinks.forEach(link => toggleColor(link, "about"));
+      break;
+
+    case "contact": 
+      navLinks.forEach(link => toggleColor(link, "contact"));
+      break;
+
+    case "projects": 
+      navLinks.forEach(link => toggleColor(link, "projects"));
+      break;
+  
+    default:
+      navLinks.forEach(link => toggleColor(link, "home"));
+      break;
+  }
   });
 }
 
@@ -48,6 +68,9 @@ const homeTab = document.querySelector("#home"),
 const projectTiles = document.querySelectorAll(".project-tile");
 
 /* Event Listeners */
+
+window.addEventListener("hashchange", addHighlightColor);
+window.addEventListener("load", addHighlightColor);
 
 goHomeLink.addEventListener("click", () => {
   homeTab.classList.toggle("hidden", false);
