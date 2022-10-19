@@ -30,6 +30,31 @@ function addHighlightColor() {
   }
 }
 
+function changeTab(tab=homeTab) {
+  if (tab === projectsTab) {
+    homeTab.classList.toggle("hidden", true);
+    inProgressTab.classList.toggle("hidden", true);
+    projectsTab.classList.toggle("hidden", false);
+    window.location.assign(`./#${tab.id.split('-')[0]}`);
+  } else if (tab === inProgressTab) {
+    homeTab.classList.toggle("hidden", true);
+    projectsTab.classList.toggle("hidden", true);
+    inProgressTab.classList.toggle("hidden", false);
+  } else {
+    projectsTab.classList.toggle("hidden", true);
+    inProgressTab.classList.toggle("hidden", true);
+    homeTab.classList.toggle("hidden", false);
+  }
+}
+
+function displayPage() {
+  addHighlightColor();
+  const tab = location.hash.substring(1) === "projects"
+    ? projectsTab
+    : homeTab
+  changeTab(tab);
+}
+
 function openProjectDetails(tile) {
   window.location.assign(`https://theavocadocoder.github.io/project-details/#${tile.id}`);
 }
@@ -61,24 +86,17 @@ const projectTiles = document.querySelectorAll(".project-tile");
 
 /* Event Listeners */
 
-window.addEventListener("hashchange", addHighlightColor);
-window.addEventListener("load", addHighlightColor);
+window.addEventListener("hashchange", displayPage);
+window.addEventListener("load", displayPage);
 
-goHomeLink.addEventListener("click", () => {
-  homeTab.classList.toggle("hidden", false);
-  inProgressTab.classList.toggle("hidden", true);
-});
+goHomeLink.addEventListener("click", changeTab);
 
 navLinks.forEach(link => {
   link.addEventListener("click", () => {
     if (link === projectsNavLink) {
-      homeTab.classList.toggle("hidden", true);
-      projectsTab.classList.toggle("hidden", false);
-      inProgressTab.classList.toggle("hidden", true);
+      changeTab(projectsTab);
     } else {
-      homeTab.classList.toggle("hidden", false);
-      inProgressTab.classList.toggle("hidden", true);
-      projectsTab.classList.toggle("hidden", true);
+      changeTab();
     }
   })
 });
