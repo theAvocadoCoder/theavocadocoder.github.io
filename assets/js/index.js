@@ -28,18 +28,10 @@ function addHighlightColor() {
       navLinks.forEach(link => toggleColor(link, "home"));
       break;
   }
-  });
-}
-
-function clearClassList(element) {
-  const classListLength = element.classList.length;
-  for (let i = 0; i < classListLength; i++) {
-    element.classList.remove(element.classList[0]);
-  }
 }
 
 function openProjectDetails(tile) {
-  document.createElement("div");
+  window.location.assign(`https://theavocadocoder.github.io/project-details/#${tile.id}`);
 }
 
 
@@ -75,7 +67,6 @@ window.addEventListener("load", addHighlightColor);
 goHomeLink.addEventListener("click", () => {
   homeTab.classList.toggle("hidden", false);
   inProgressTab.classList.toggle("hidden", true);
-  addHighlightColor(homeNavLink);
 });
 
 navLinks.forEach(link => {
