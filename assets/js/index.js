@@ -56,7 +56,7 @@ function displayPage() {
 }
 
 function openProjectDetails(tile) {
-  window.location.assign(`https://theavocadocoder.github.io/project-details/#${tile.id}`);
+  window.location.assign(`https://theavocadocoder.github.io/${tile.id}`);
 }
 
 
