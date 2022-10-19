@@ -78,31 +78,18 @@ goHomeLink.addEventListener("click", () => {
   addHighlightColor(homeNavLink);
 });
 
-homeNavLink.addEventListener("click", () => {
-  homeTab.classList.toggle("hidden", false);
-  inProgressTab.classList.toggle("hidden", true);
-  projectsTab.classList.toggle("hidden", true);
-  addHighlightColor(homeNavLink);
-});
-
-aboutNavLink.addEventListener("click", () => {
-  homeTab.classList.toggle("hidden", false);
-  inProgressTab.classList.toggle("hidden", true);
-  projectsTab.classList.toggle("hidden", true);
-  addHighlightColor(aboutNavLink);
-});
-
-contactNavLink.addEventListener("click", () => {
-  homeTab.classList.toggle("hidden", false);
-  inProgressTab.classList.toggle("hidden", true);
-  projectsTab.classList.toggle("hidden", true);
-  addHighlightColor(contactNavLink);
-});
-
-projectsNavLink.addEventListener("click", () => {
-  homeTab.classList.toggle("hidden", true);
-  projectsTab.classList.toggle("hidden", false);
-  addHighlightColor(projectsNavLink);
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    if (link === projectsNavLink) {
+      homeTab.classList.toggle("hidden", true);
+      projectsTab.classList.toggle("hidden", false);
+      inProgressTab.classList.toggle("hidden", true);
+    } else {
+      homeTab.classList.toggle("hidden", false);
+      inProgressTab.classList.toggle("hidden", true);
+      projectsTab.classList.toggle("hidden", true);
+    }
+  })
 });
 
 projectTiles.forEach(tile => {
