@@ -638,12 +638,16 @@ video {
   width: 100%;
 }
 
-.w-2\/3 {
-  width: 66.666667%;
+.w-1\/2 {
+  width: 50%;
 }
 
 .w-3\/4 {
   width: 75%;
+}
+
+.w-2\/3 {
+  width: 66.666667%;
 }
 
 .cursor-pointer {
@@ -652,6 +656,10 @@ video {
 
 .flex-col {
   flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 .items-center {
@@ -668,6 +676,10 @@ video {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.justify-items-center {
+  justify-items: center;
 }
 
 .gap-2 {
@@ -736,10 +748,6 @@ video {
   padding: 1.25rem;
 }
 
-.p-7 {
-  padding: 1.75rem;
-}
-
 .p-6 {
   padding: 1.5rem;
 }
@@ -754,29 +762,14 @@ video {
   padding-right: 4rem;
 }
 
-.py-5 {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-}
-
-.px-7 {
-  padding-left: 1.75rem;
-  padding-right: 1.75rem;
-}
-
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
 
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-.py-7 {
-  padding-top: 1.75rem;
-  padding-bottom: 1.75rem;
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 
 .text-center {
@@ -826,8 +819,20 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:w-full {
+    width: 100%;
+  }
+
+  .md\:w-1\/2 {
+    width: 50%;
+  }
+
   .md\:flex-row {
     flex-direction: row;
+  }
+
+  .md\:flex-nowrap {
+    flex-wrap: nowrap;
   }
 
   .md\:text-3xl {
@@ -894,16 +899,12 @@ video {
     justify-content: center;
   }
 
-  .lg\:gap-16 {
-    gap: 4rem;
+  .lg\:gap-14 {
+    gap: 3.5rem;
   }
 
   .lg\:gap-2 {
     gap: 0.5rem;
-  }
-
-  .lg\:gap-14 {
-    gap: 3.5rem;
   }
 
   .lg\:overflow-auto {
