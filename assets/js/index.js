@@ -51,12 +51,13 @@ function displayPage() {
   addHighlightColor();
   const tab = location.hash.substring(1) === "projects"
     ? projectsTab
+    // ? inProgressTab
     : homeTab
   changeTab(tab);
 }
 
 function openProjectDetails(tile) {
-  window.location.assign(`https://theavocadocoder.github.io/${tile.id}`);
+  window.open(`https://theavocadocoder.github.io/${tile.id}`, "_blank");
 }
 
 
@@ -94,6 +95,7 @@ goHomeLink.addEventListener("click", changeTab);
 navLinks.forEach(link => {
   link.addEventListener("click", () => {
     if (link === projectsNavLink) {
+      // changeTab(inProgressTab);
       changeTab(projectsTab);
     } else {
       changeTab();
