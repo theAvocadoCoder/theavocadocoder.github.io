@@ -57,12 +57,15 @@
     <section id="about" class="h-screen bg-gray-100">
       <div class="flex items-center justify-center h-full">
         <div class="flex items-center justify-center h-5/12">
-          <div class="flex flex-col text-center bg-gray-300 p-5 w-2/3 md:w-1/2 h-full rounded-md">
+          <div class="flex flex-col text-justify bg-gray-300 p-5 w-2/3 md:w-1/2 h-full gap-4 rounded-md">
             <p>
-              Hi there, I'm Kelechi, a web developer with a passion for creating visually appealing and user-friendly websites. I
-              specialize in React, TypeScript and Sass, and I'm always eager to learn and stay up-to-date with the latest
-              technologies. I'm a hardworking and dedicated team player, and I'm ready to take on any challenge that comes my way.
-              Have a look at my portfolio and let me know what you think!
+              Hi there! I'm Kelechi, a web developer with an interest in simple but efficient algorithms. I love taking problems apart and learning new things. I'm currently studying and coding my way into fullstack MERN.
+            </p>
+            <p>
+              I am proficient with basic frontend web technologies, including: JavaScript, HTML5, CSS3, TypeScript, SASS, TailwindCSS, React and Vue. I am also familiar with (source- and) version-control using Git, and I am learning frontend testing.
+            </p>
+            <p>
+              I am excited about building things on the web and I hope my projects will spark that same excitement in you.
             </p>
           </div>
         </div>
@@ -73,7 +76,10 @@
     <section id="contact" class="h-screen bg-gray-200">
       <div class="flex items-center justify-center h-full">
         <div class="flex flex-col gap-7 items-center justify-center">
-          <h3 class="text-2xl font-sans font-bold">Hit Me Up!</h3>
+          <div>
+            <h3 class="text-lg text-center font-sans">I'd love to hear from you, so</h3>
+            <h3 class="text-2xl text-center font-sans font-bold">Hit Me Up!</h3>
+          </div>
 
           <div class="flex gap-9 w-1/2 flex-wrap justify-center md:flex-nowrap md:w-full">
             <a href="tel:+2348061116006">
@@ -115,12 +121,12 @@
       <section class="p-5 text-justify inline-flex flex-col items-center justify-center gap-4 lg:w-4/12">
         <h1 class="text-2xl font-sans font-bold">Hello, internet stranger!</h1>
         <div>
-          Welcome to my projects page! Here, you'll find a curated selection of my work that showcases my skills and experience as
-          a web developer. From building web applications to improving user experience, I've had the opportunity to work on a wide
-          range of projects. Each project showcases my ability to solve problems and create visually appealing, user-friendly
-          websites that meet the needs of my clients. I hope you enjoy browsing through my projects and thank you for visiting! I
-          hope
-          you like them :)
+          <p>
+            Welcome to my projects page!
+          </p>
+          <p>
+            Here, you'll find a carefully curated selection of my work, both independent and collaborative, that showcases my skills and experience as a web developer. From simple games, to drawing apps, I've had the opportunity to work on a wide range of projects. Each project was an interesting challenge that pushed me out of my comfort zone and taught me new things. I'm pleased to share these snippets of my journey with you. I hope you enjoy browsing, and thank you for visiting :)
+          </p>
         </div>
       </section>
       <div class="w-3/4 h-0.5 lg:w-1 lg:flex-shrink lg:h-72 bg-gray-800 mx-auto lg:my-auto"></div>
@@ -133,10 +139,10 @@
         </div>
         <div
           role="link"
-          id="odin_etch_a_sketch"
+          id="pixelite"
           class="project-tile h-3/4 w-full lg:h-36 lg:w-36 rounded-md flex lg:flex-col justify-between lg:justify-center lg:gap-2 lg:items-center bg-gray-100 my-5 px-3 py-5 cursor-pointer">
           <iconify-icon icon="map:art-gallery" class="text-center text-green-600 text-2xl"></iconify-icon>
-          <span class="text-center text-gray-800">Etch-a-Sketch</span>
+          <span class="text-center text-gray-800">Pixelite</span>
         </div>
         <div
           role="link"
@@ -147,10 +153,10 @@
         </div>
         <div
           role="link"
-          id="odin_calculator"
+          id="plantify-app"
           class="project-tile h-3/4 w-full lg:h-36 lg:w-36 rounded-md flex lg:flex-col justify-between lg:justify-center lg:gap-2 lg:items-center bg-gray-100 my-5 px-3 py-5 cursor-pointer">
-          <iconify-icon icon="ant-design:calculator-filled" class="text-center text-green-600 text-2xl"></iconify-icon>
-          <span class="text-center text-gray-800">Basic Calculator</span>
+          <iconify-icon icon="ph:plant-bold" class="text-center text-green-600 text-2xl"></iconify-icon>
+          <span class="text-center text-gray-800">Plantify</span>
         </div>
         <div
           role="link"
@@ -161,13 +167,27 @@
         </div>
         <div
           role="link"
-          id="hngi_fe_metabnb"
+          id="kelechi-nwauwa-lendsqr-fe-test"
           class="project-tile h-3/4 w-full lg:h-36 lg:w-36 rounded-md flex lg:flex-col justify-between lg:justify-center lg:gap-2 lg:items-center bg-gray-100 my-5 px-3 py-5 cursor-pointer">
-          <iconify-icon icon="mdi:house-map-marker" class="text-center text-green-600 text-3xl"></iconify-icon>
-          <span class="text-center text-gray-800">Meta BnB</span>
+          <iconify-icon icon="eos-icons:admin-outlined" class="text-center text-green-600 text-3xl"></iconify-icon>
+          <span class="text-center text-gray-800">Lendsqr Admin Page Clone</span>
         </div>
       </section>
     </div>
+    <dialog id="project-dialog">
+      <span id="close-dialog" role="button" class="relative right-0">x</span>
+      <div class="flex flex-col justify-between">
+        <h1 id="project-title" class="text-3xl font-bold"></h1>
+        <p id="project-type"></p>
+        <div class="h-12 w-12">&nbsp;</div>
+        <div id="project-description"></div>
+        <div id="project-links-div" class="flex flex-col">
+          <a target="_blank" id="project-github-link"></a>
+          <br>
+          <a target="_blank" id="project-deployment-link"></a>
+        </div>
+      </div>
+    </dialog>
   </div>
 
   <!-- Footer -->
@@ -180,7 +200,7 @@
   </div>
 
   <!-- Scripts -->
-  <script src="/assets/js/index.js"></script>
+  <script src="./js/index.js"></script>
   <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
 </body>
 
