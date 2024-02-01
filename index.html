@@ -22,21 +22,53 @@
 
     <nav class="flex w-full h-16 justify-between p-2 sticky top-0 dark:bg-slate-900 bg-lime-50 shadow-sm sm:shadow-md md:shadow-lg shadow-lime-900/30 dark:shadow-slate-950">
         <!-- Logo -->
-        <img src="" alt="theavocadocoder logo">
-
-        <!-- Navigation Items -->
-        <div>
-            <a href="#">Home</a>
-            <a  href="#projects">Projects</a>
-            <a  href="#about">About</a>
-            <a  href="#contact">Contact</a>
-            <button id="view-resume">View Resume</button>
+        <a href="/" class="flex items-center">
+            <img id="logo-img" src="assets/theavocadocoder_image.webp" alt="" class="w-10">
+            <span id="logo-text" class="font-bold hidden md:inline">theAvocadoCoder</span>
+        </a>
+        
+        <!-- Nav Content -->
+        <div class="flex lg:flex-row-reverse items-center lg:justify-center lg:gap-4">
+            <!-- Theme Toggle -->
+            <div class="p-2.5">
+                <button type="button" id="theme-toggle" class="dark:bg-lime-400 dark:text-slate-950 bg-slate-900 text-lime-50 flex justify-center items-center h-fit py-2 px-2 rounded-full">
+                    <span class="sr-only">Toggle Theme</span>
+                    <!-- Sun Icon -->
+                    <svg class="dark:inline hidden w-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M13 1v3h-2V1zm7.485 3.928L18.364 7.05L16.95 5.636l2.121-2.122zM4.93 3.514l2.12 2.122L5.636 7.05L3.515 4.929zM12 8a4 4 0 1 0 0 8a4 4 0 0 0 0-8m-6 4a6 6 0 1 1 12 0a6 6 0 0 1-12 0m-5-1h3v2H1zm19 0h3v2h-3zM7.05 18.363l-2.12 2.123l-1.415-1.416l2.121-2.122zm11.314-1.414l2.121 2.122l-1.414 1.414l-2.121-2.121zM13 20v3h-2v-3z" />
+                    </svg>
+                    <!-- Moon Icon -->
+                    <svg class="dark:hidden inline w-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M10.412 4.158A8 8 0 1 0 18.93 16A9 9 0 0 1 10 7c0-.98.131-1.937.412-2.842M2 12C2 6.477 6.477 2 12 2h1.734l-.868 1.5C12.287 4.5 12 5.689 12 7a7 7 0 0 0 8.348 6.87l1.682-.327l-.543 1.626C20.162 19.137 16.417 22 12 22C6.477 22 2 17.523 2 12" />
+                    </svg>
+                </button>
+            </div>
+            <!-- Menu Button -->
+            <div class="flex lg:hidden">
+                <button type="button" id="menu-button" class="inline-flex items-center justify-center rounded-md p-2.5">
+                    <span class="sr-only">Open main menu</span>
+                    <!-- Burger Icon -->
+                    <svg id="burger-icon" class="text-slate-950 dark:text-lime-50 w-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 6h18M3 12h18M3 18h18"/></svg>
+                    <!-- Close Icon -->
+                    <svg id="close-icon" class="hidden text-slate-950 dark:text-lime-50 w-10 h-10" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="m7.05 5.636l4.95 4.95l4.95-4.95l1.414 1.414l-4.95 4.95l4.95 4.95l-1.415 1.414l-4.95-4.95l-4.949 4.95l-1.414-1.414l4.95-4.95l-4.95-4.95z" />
+                    </svg>
+                </button>
+            </div>
+            <!-- Navigation Items -->
+            <div id="nav-list" class="hidden lg:flex fixed lg:static top-0 left-0 bottom-0 w-[calc(100vw-5rem)] h-dvh dark:bg-slate-950 bg-lime-100 lg:w-fit lg:h-full dark:lg:bg-transparent lg:bg-transparent flex-col justify-center gap-16 text-center items-center lg:flex-row">
+                <a href="#" class="font-semibold border-b-4 border-b-transparent hover:border-b-slate-900 dark:hover:border-b-lime-400 px-3 hover:pb-2">Home</a>
+                <a href="#projects" class="font-semibold border-b-4 border-b-transparent hover:border-b-slate-900 dark:hover:border-b-lime-400 px-3 hover:pb-2">Projects</a>
+                <a href="#about" class="font-semibold border-b-4 border-b-transparent hover:border-b-slate-900 dark:hover:border-b-lime-400 px-3 hover:pb-2">About</a>
+                <a href="#contact" class="font-semibold border-b-4 border-b-transparent hover:border-b-slate-900 dark:hover:border-b-lime-400 px-3 hover:pb-2">Contact</a>
+                <button id="view-resume" class="font-semibold border-b-4 border-b-transparent hover:border-4 hover:border-slate-900 hover:bg-slate-900 hover:text-lime-50 dark:hover:border-lime-400 dark:hover:bg-lime-400 dark:hover:text-slate-950 px-3 hover:py-2">View Resume</button>
+            </div>
         </div>
     </nav>
 
     <main>
         <!-- Hero -->
-        <section>
+        <section class="h-[80vh] flex flex-col items-center justify-around snap-start">
             <h1>Hi, I'm <span>Kelechi Nwa-uwa</span></h1>
             <p>A junior <span>front-end</span> heavy JavaScript <span>developer</span>.</p>
             <p>I enjoy writing algorithms in JavaScript, bringing designs to life and squashing bugs.</p>
@@ -58,7 +90,7 @@
         </section>
 
         <!-- Projects -->
-        <section>
+        <section id="projects" class="h-[80vh] flex flex-col items-center justify-around snap-start">
             <h2>My Projects</h2>
 
             <div>
@@ -114,7 +146,7 @@
         </section>
 
         <!-- About -->
-        <section>
+        <section id="about" class="h-[80vh] flex flex-col items-center justify-around snap-start">
             <h2>About Me</h2>
 
             <p>
@@ -126,7 +158,7 @@
         </section>
 
         <!-- Contact -->
-        <section>
+        <section id="contact" class="h-[80vh] flex flex-col items-center justify-around snap-start">
             <h2>Contact Me</h2>
 
             <div>
