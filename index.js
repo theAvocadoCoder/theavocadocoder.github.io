@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Query Elements
-    const logoImg = document.querySelector("#logo-img"),
+    const logoLink = document.querySelector("#logo-link"),
+        logoImg = document.querySelector("#logo-img"),
         logoText = document.querySelector("#logo-text"),
         menuButton = document.querySelector("#menu-button"),
         themeToggle = document.querySelector("#theme-toggle"),
@@ -21,6 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
         : "/member-kay-portfolio";
     
     const resumeUrl = baseUrl + "/assets/resume.pdf";
+
+    logoLink.setAttribute("href", baseUrl+"/");
 
     // Event Listeners
     menuButton.addEventListener("click", toggleNav);
