@@ -1,33 +1,54 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Toggle the theme
-    const themeToggle = document.querySelector("#theme-toggle")
-    themeToggle.addEventListener("click", () => {
-        localStorage.theme = localStorage.theme === "light" ? "dark" : "light";
-        document.documentElement.classList.toggle("dark");
-    });
-
-
     // Query Elements
     const logoImg = document.querySelector("#logo-img"),
         logoText = document.querySelector("#logo-text"),
         menuButton = document.querySelector("#menu-button"),
+        themeToggle = document.querySelector("#theme-toggle"),
         navList = document.querySelector("#nav-list"),
         burgerIcon = document.querySelector("#burger-icon"),
-        closeIcon = document.querySelector("#close-icon");
+        closeIcon = document.querySelector("#close-icon"),
+        viewResume = document.querySelector("#view-resume"),
+        resumeContainer = document.querySelector("#resume-container"),
+        resumeCanvas = document.querySelector("#resume-canvas"),
+        downloadResume = document.querySelector("#download-resume"),
+        closeResume = document.querySelector("#close-resume");
 
     const navLinks = document.querySelectorAll("#nav-list a");
+
+    const resumeUrl = window.location.origin + "/assets/resume.pdf";
 
 
     // Event Listeners
     menuButton.addEventListener("click", toggleNav);
 
+    // Toggle the theme
+    themeToggle.addEventListener("click", () => {
+        localStorage.theme = localStorage.theme === "light" ? "dark" : "light";
+        document.documentElement.classList.toggle("dark");
+    });
+
+    // Close nav on nav link click
     navLinks.forEach(link => {
-        link.addEventListener("click", (e) => {
+        link.addEventListener("click", () => {
             if (!navList.classList.contains("hidden")) {
                 toggleNav();
             }
-        })
+        });
+    });
+
+    viewResume.addEventListener("click", toggleResume);
+
+    downloadResume.addEventListener("click", () => {
+        const resumeLink = document.createElement("a");
+        resumeLink.style.display = "hidden";
+        document.body.appendChild(resumeLink);
+        resumeLink.setAttribute("href", resumeUrl);
+        resumeLink.setAttribute("download", "Kelechi_Nwa-uwa_Resume");
+        resumeLink.click();
     })
+
+    closeResume.addEventListener("click", toggleResume);
+
 
     // Functions
     function toggleNav() {
@@ -39,4 +60,53 @@ document.addEventListener("DOMContentLoaded", () => {
         logoText.classList.toggle("z-20");
         logoText.classList.toggle("hidden");
     }
-})
+
+    function toggleResume() {
+        // Close navigation if it is open
+        if (!navList.classList.contains("hidden")) {
+            toggleNav();
+        }
+
+        resumeContainer.classList.toggle("hidden");
+        resumeContainer.classList.toggle("flex");
+        resumeContainer.classList.toggle("items-center");
+        resumeContainer.classList.toggle("justify-center");
+        
+        // Disable body scroll when resume is open
+        !resumeContainer.classList.contains("hidden")
+            ? document.body.style.overflow = "hidden"
+            : document.body.style.overflow = "scroll";
+    }
+
+
+    //  Render Resume
+    pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.0.379/build/pdf.worker.mjs";
+
+    pdfjsLib.getDocument(resumeUrl).promise.then(function(pdf) {
+
+        pdf.getPage(1).then(function(page) {
+
+            const viewport = page.getViewport({
+                scale: 1
+            });
+
+            resumeCanvas.height = viewport.height;
+
+            resumeCanvas.width = viewport.width;
+
+            const ctx = resumeCanvas.getContext('2d');
+
+            const renderContext = {
+
+                canvasContext: ctx,
+
+                viewport: viewport
+
+            };
+
+            page.render(renderContext);
+
+        });
+
+    });
+});
