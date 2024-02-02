@@ -16,8 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const navLinks = document.querySelectorAll("#nav-list a");
 
-    const resumeUrl = window.location.origin + "/assets/resume.pdf";
-
+    const baseUrl = window.location.hostname == "127.0.0.1"
+        ? window.location.origin
+        : "/member-kay-portfolio";
+    
+    const resumeUrl = baseUrl + "/assets/resume.pdf";
 
     // Event Listeners
     menuButton.addEventListener("click", toggleNav);
