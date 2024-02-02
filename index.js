@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //  Render Resume
     pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.0.379/build/pdf.worker.mjs";
 
-    pdfjsLib.getDocument(resumeUrl).promise.then(function(pdf) {
+    pdfjsLib.getDocument("./assets/resume.pdf").promise.then(function(pdf) {
 
         pdf.getPage(1).then(function(page) {
 
