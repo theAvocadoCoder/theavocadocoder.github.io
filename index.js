@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
         closeIcon = document.querySelector("#close-icon"),
         viewResume = document.querySelector("#view-resume"),
         resumeContainer = document.querySelector("#resume-container"),
+        resumeBgDiv = document.querySelector("#resume-bg-div"),
         resumeCanvas = document.querySelector("#resume-canvas"),
         downloadResume = document.querySelector("#download-resume"),
         closeResume = document.querySelector("#close-resume");
@@ -68,9 +69,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         resumeContainer.classList.toggle("hidden");
-        resumeContainer.classList.toggle("flex");
-        resumeContainer.classList.toggle("items-center");
-        resumeContainer.classList.toggle("justify-center");
+        // resumeContainer.classList.toggle("flex");
+        // resumeContainer.classList.toggle("items-center");
+        // resumeContainer.classList.toggle("justify-center");
         
         // Disable body scroll when resume is open
         !resumeContainer.classList.contains("hidden")
