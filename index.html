@@ -75,7 +75,7 @@
 
     <main class="bg-inherit">
         <!-- Hero -->
-        <section id="hero" class="h-[80vh] flex flex-col items-center justify-center snap-start px-10 mt-16 bg-lime-500/5 dark:bg-black/40 text-center gap-5">
+        <section id="hero" class="min-h-[80vh] flex flex-col items-center justify-center snap-start px-10 mt-16 bg-lime-500/5 dark:bg-black/40 text-center gap-5">
             <h1 class="text-3xl">Hi, I'm <span class="text-lime-600 dark:text-lime-300 font-bold text-[2.5rem] text-nowrap">Kelechi Nwa-uwa</span></h1>
             <p class="[line-height:1.15rem]">A junior <span class="text-lime-600 dark:text-lime-300 font-bold text-[1.5rem]">front-end</span> heavy JavaScript <span class="text-lime-600 dark:text-lime-300 font-bold text-[1.5rem]">developer</span>.</p>
             <p class="text-sm max-w-[60%]">I enjoy writing algorithms in JavaScript, bringing designs to life and squashing bugs.</p>
@@ -106,55 +106,70 @@
         </section>
 
         <!-- Projects -->
-        <section id="projects" class="h-[80vh] flex flex-col items-center justify-around snap-start bg-lime-500/10 dark:bg-black/50">
-            <h2>My Projects</h2>
+        <section id="projects" class="min-h-[80vh] flex flex-col items-center justify-around gap-5 snap-start bg-lime-500/10 dark:bg-black/50 py-16 lg:py-20">
+            <h2 class="text-xl">Featured <span class="text-lime-600 dark:text-lime-300 font-bold text-[2rem]">Projects</span></h2>
 
-            <div>
+            <p class="text-xs">Here are some of the projects I've worked on</p>
+
+            <div class="p-2 md:p-5 lg:p-10 flex flex-col items-center justify-center gap-5 xl:gap-10 md:flex-row md:flex-wrap">
                 <!-- Pixelite -->
-                <div>
-                    <img src="" alt="">
-                    <div>
-                        <h3>Pixelite</h3>
-                        <p>Pixelite empowers digital artists to express their creativity through pixel art. Users can choose from a range of square canvas sizes, change their 'pen' color, and download their creations.</p>
-                        <div>
-                            <a href="" target="_blank" rel="noreferrer noopener">Live Site</a>
-                            <a href="" target="_blank" rel="noreferrer noopener">Source Code</a>
+                <div class="flex flex-col items-center justify-start gap-2 lg:gap-3 p-4 rounded-lg bg-lime-600/20 dark:bg-lime-500/20 dark:shadow-lg dark:shadow-black/20 sm:max-w-72 lg:max-w-[20rem] h-[30rem]">
+                    <img src="assets/pixelite.png" alt="" class="w-full rounded-lg">
+                    <div class="h-full text-center flex flex-col items-center justify-between p-2 lg:p-3">
+                        <h3 class="font-extrabold text-lg">Pixelite</h3>
+                        <p class="text-sm w-3/4">Pixelite empowers digital artists to express their creativity through pixel art. Users can choose from a range of square canvas sizes, change their 'pen' color, and download their creations.</p>
+                        <div class="w-full flex justify-between items-center">
+                            <a class="dark:bg-lime-300 dark:text-lime-950 bg-lime-950 text-lime-100 flex justify-center items-center font-semibold py-2 px-3 rounded-lg" href="https://theavocadocoder.github.io/pixelite" target="_blank" rel="noreferrer noopener">Live Site</a>
+                            <a class="dark:bg-lime-300 dark:text-lime-950 bg-lime-950 text-lime-100 flex justify-center items-center font-semibold py-2 px-3 rounded-lg" href="https://github.com/theAvocadoCoder/pixelite" target="_blank" rel="noreferrer noopener">Source Code</a>
                         </div>
                     </div>
                 </div>
                 <!-- Markdown Previewer -->
-                <div>
-                    <img src="" alt="">
-                    <div>
-                        <h3>Markdown Previewer</h3>
-                        <p>The Markdown Previewer allows users to input Markdown text in an editor and instantly see the live preview of the formatted content.</p>
-                        <div>
-                            <a href="" target="_blank" rel="noreferrer noopener">Live Site</a>
-                            <a href="" target="_blank" rel="noreferrer noopener">Source Code</a>
+                <div class="flex flex-col items-center justify-start gap-2 lg:gap-3 p-4 rounded-lg bg-lime-600/20 dark:bg-lime-500/20 dark:shadow-lg dark:shadow-black/20 sm:max-w-72 lg:max-w-[20rem] h-[30rem]">
+                    <img src="assets/markdown-previewer.png" alt="" class="w-full rounded-lg">
+                    <div class="h-full text-center flex flex-col items-center justify-between p-2 lg:p-3">
+                        <h3 class="font-extrabold text-lg">Markdown Previewer</h3>
+                        <p class="text-sm w-3/4">The Markdown Previewer allows users to input Markdown text in an editor and instantly see the live preview of the formatted content.</p>
+                        <div class="w-full flex justify-between items-center">
+                            <a class="dark:bg-lime-300 dark:text-lime-950 bg-lime-950 text-lime-100 flex justify-center items-center font-semibold py-2 px-3 rounded-lg" href="https://theavocadocoder.github.io/markdown-previewer" target="_blank" rel="noreferrer noopener">Live Site</a>
+                            <a class="dark:bg-lime-300 dark:text-lime-950 bg-lime-950 text-lime-100 flex justify-center items-center font-semibold py-2 px-3 rounded-lg" href="https://github.com/theAvocadoCoder/markdown-previewer" target="_blank" rel="noreferrer noopener">Source Code</a>
                         </div>
                     </div>
                 </div>
-                <!-- Random Quotes Generator -->
-                <div>
-                    <img src="" alt="">
-                    <div>
-                        <h3>Random Quotes Generator</h3>
-                        <p>.</p>
-                        <div>
-                            <a href="" target="_blank" rel="noreferrer noopener">Live Site</a>
-                            <a href="" target="_blank" rel="noreferrer noopener">Source Code</a>
-                        </div>
-                    </div>
-                </div>
+                <!-- TODO: Random Quotes Generator -->
                 <!-- TicTacToe -->
-                <div>
-                    <img src="" alt="">
-                    <div>
-                        <h3>TicTacToe</h3>
-                        <p>This project is a simple implementation of the classic Tic Tac Toe game using HTML, CSS, and JavaScript.</p>
-                        <div>
-                            <a href="" target="_blank" rel="noreferrer noopener">Live Site</a>
-                            <a href="" target="_blank" rel="noreferrer noopener">Source Code</a>
+                <div class="flex flex-col items-center justify-start gap-2 lg:gap-3 p-4 rounded-lg bg-lime-600/20 dark:bg-lime-500/20 dark:shadow-lg dark:shadow-black/20 sm:max-w-72 lg:max-w-[20rem] h-[30rem]">
+                    <img src="assets/tic-tac-toe.png" alt="" class="w-full rounded-lg">
+                    <div class="h-full text-center flex flex-col items-center justify-between p-2 lg:p-3">
+                        <h3 class="font-extrabold text-lg">TicTacToe</h3>
+                        <p class="text-sm w-3/4">This project is a simple implementation of the classic Tic Tac Toe game using HTML, CSS, and JavaScript.</p>
+                        <div class="w-full flex justify-between items-center">
+                            <a class="dark:bg-lime-300 dark:text-lime-950 bg-lime-950 text-lime-100 flex justify-center items-center font-semibold py-2 px-3 rounded-lg" href="https://theavocadocoder.github.io/odin_tic-tac-toe" target="_blank" rel="noreferrer noopener">Live Site</a>
+                            <a class="dark:bg-lime-300 dark:text-lime-950 bg-lime-950 text-lime-100 flex justify-center items-center font-semibold py-2 px-3 rounded-lg" href="https://github.com/theAvocadoCoder/odin_tic-tac-toe" target="_blank" rel="noreferrer noopener">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- This Website -->
+                <div class="flex flex-col items-center justify-start gap-2 lg:gap-3 p-4 rounded-lg bg-lime-600/20 dark:bg-lime-500/20 dark:shadow-lg dark:shadow-black/20 sm:max-w-72 lg:max-w-[20rem] h-[30rem]">
+                    <img src="assets/theavocadocoder-site.png" alt="" class="w-full rounded-lg">
+                    <div class="h-full text-center flex flex-col items-center justify-between p-2 lg:p-3">
+                        <h3 class="font-extrabold text-lg">My Portfolio Site</h3>
+                        <p class="text-sm w-3/4">This portfolio site was created and HTML, CSS and JavaScript. It includes relevant information about the developer.</p>
+                        <div class="w-full flex justify-between items-center">
+                            <a class="dark:bg-lime-300 dark:text-lime-950 bg-lime-950 text-lime-100 flex justify-center items-center font-semibold py-2 px-3 rounded-lg" href="https://agile-learning-institute.github.io/member-kay-portfolio/">Live Site</a>
+                            <a class="dark:bg-lime-300 dark:text-lime-950 bg-lime-950 text-lime-100 flex justify-center items-center font-semibold py-2 px-3 rounded-lg" href="https://github.com/agile-learning-institute/member-kay-portfolio/" target="_blank" rel="noreferrer noopener">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carmel Homes Ltd -->
+                <div class="flex flex-col items-center justify-start gap-2 lg:gap-3 p-4 rounded-lg bg-lime-600/20 dark:bg-lime-500/20 dark:shadow-lg dark:shadow-black/20 sm:max-w-72 lg:max-w-[20rem] h-[30rem]">
+                    <img src="assets/carmelhomes-ltd.png" alt="" class="w-full rounded-lg">
+                    <div class="h-full text-center flex flex-col items-center justify-between p-2 lg:p-3">
+                        <h3 class="font-extrabold text-lg">Carmel Homes Ltd</h3>
+                        <p class="text-sm w-3/4">This is the official website of Carmel Homes Ltd. This website, crafted using React, is designed to provide a seamless and informative experience for visitors.</p>
+                        <div class="w-full flex justify-between items-center">
+                            <a class="dark:bg-lime-300 dark:text-lime-950 bg-lime-950 text-lime-100 flex justify-center items-center font-semibold py-2 px-3 rounded-lg" href="https://carmelhomesltd.com" target="_blank" rel="noreferrer noopener">Live Site</a>
+                            <a class="dark:bg-lime-300 dark:text-lime-950 bg-lime-950 text-lime-100 flex justify-center items-center font-semibold py-2 px-3 rounded-lg" href="https://github.com/theAvocadoCoder/" target="_blank" rel="noreferrer noopener">Source Code</a>
                         </div>
                     </div>
                 </div>
@@ -162,7 +177,7 @@
         </section>
 
         <!-- About -->
-        <section id="about" class="h-[80vh] flex flex-col items-center justify-around snap-start bg-lime-500/20 dark:bg-black/60">
+        <section id="about" class="min-h-[80vh] flex flex-col items-center justify-around snap-start bg-lime-500/20 dark:bg-black/60">
             <h2>About Me</h2>
 
             <p>
@@ -174,7 +189,7 @@
         </section>
 
         <!-- Contact -->
-        <section id="contact" class="h-[80vh] flex flex-col items-center justify-around snap-start bg-lime-500/10 dark:bg-black/50">
+        <section id="contact" class="min-h-[80vh] flex flex-col items-center justify-around snap-start bg-lime-500/10 dark:bg-black/50">
             <h2>Contact Me</h2>
 
             <div>
