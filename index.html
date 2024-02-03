@@ -177,15 +177,99 @@
         </section>
 
         <!-- About -->
-        <section id="about" class="min-h-[80vh] flex flex-col items-center justify-around snap-start bg-lime-500/20 dark:bg-black/60">
-            <h2>About Me</h2>
+        <section id="about" class="min-h-[80vh] flex flex-col items-center justify-around gap-5 snap-start bg-lime-500/20 dark:bg-black/60 py-16 lg:py-20 px-5">
+            <h2 class="text-xl">About <span class="text-lime-600 dark:text-lime-300 font-bold text-2xl">Me</span></h2>
 
-            <p>
-                I specialize in creating small to medium responsive, user-friendly websites and applications using  HTML5/CSS3, JavaScript (ES6), and React.js.
-            </p>
-            <p>
-                My skills include:  HTML, CSS, JavaScript (ES6), React.js, TailwindCSS and Version Control with Git.
-            </p>
+            <!-- Profile -->
+            <div class="flex flex-col items-center justify-center lg:flex-row gap-5 lg:gap-20 w-5/6 max-w-[60rem]">
+                <!-- Profile Image -->
+                <div class="relative p-4 border-2 dark:border-lime-500/10 border-lime-950/10 rounded-full w-60 h-60">
+                    <img src="assets/k_profile.jpg" alt="Kay, the developer, smiling" class="w-full h-full object-cover rounded-full">
+
+                    <!-- Git -->
+                    <svg class="absolute top-[2rem] left-0 w-10 dark:text-lime-200 text-lime-700 hover:text-orange-600 dark:hover:text-orange-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                        <path fill="currentColor" d="M15.698 7.287L8.712.302a1.03 1.03 0 0 0-1.457 0l-1.45 1.45l1.84 1.84a1.223 1.223 0 0 1 1.55 1.56l1.773 1.774a1.224 1.224 0 0 1 1.267 2.025a1.226 1.226 0 0 1-2.002-1.334L8.58 5.963v4.353a1.226 1.226 0 1 1-1.008-.036V5.887a1.226 1.226 0 0 1-.666-1.608L5.093 2.465l-4.79 4.79a1.03 1.03 0 0 0 0 1.457l6.986 6.986a1.03 1.03 0 0 0 1.457 0l6.953-6.953a1.03 1.03 0 0 0 0-1.457" />
+                    </svg>
+                    
+                    <!-- CSS -->
+                    <svg class="absolute top-0 right-[2rem] w-10 dark:text-lime-200 text-lime-700 hover:text-blue-400 dark:hover:text-blue-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="m3 2l1.6 17.8L12 22l7.5-2.2L21 2zm13.3 14.7L12 18l-4.3-1.2l-.3-3.1h2.1l.2 1.5l2.3.6l2.3-.6l.3-3H7.3l-.2-2h7.7l.1-2H7l-.2-2h10.6l-1 10.6Z" />
+                    </svg>
+
+                    <!-- HTML -->
+                    <svg class="absolute top-[6rem] -right-[1.5rem] w-10 dark:text-lime-200 text-lime-700 hover:text-orange-600 dark:hover:text-orange-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                        <path fill="currentColor" d="m0 32l34.9 395.8L191.5 480l157.6-52.2L384 32zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4l-97.9 27v.3h-1.1l-98.7-27.3l-6-75.8h47.7L138 320l53.5 14.5l53.7-14.5l6-62.2H84.3L71.5 112.2h241.1z" />
+                    </svg>
+
+                    <!-- JavaScript -->
+                    <svg class="absolute top-[12rem] left-[3rem] w-10 dark:text-lime-200 text-lime-700 hover:text-yellow-300 dark:hover:text-yellow-300 hover:bg-lime-900" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15">
+                        <path fill="currentColor" fill-rule="evenodd" d="M15 0H0v15h15zM8 8a2 2 0 0 1 2-2h1.167C12.179 6 13 6.82 13 7.833V8h-1v-.167A.833.833 0 0 0 11.167 7H10a1 1 0 0 0 0 2h1a2 2 0 1 1 0 4h-1a2 2 0 0 1-2-2h1a1 1 0 0 0 1 1h1a1 1 0 1 0 0-2h-1a2 2 0 0 1-2-2M6 6v5a1 1 0 1 1-2 0H3a2 2 0 1 0 4 0V6z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+
+                <p class="max-w-[80%] lg:max-w-[50%] text-center lg:text-left">
+                    I create small to medium responsive, user-friendly websites and web applications using  HTML5, CSS3 and JavaScript, and frameworks like React.js and TailwindCSS. 
+                </p>
+            </div>
+            
+            <h3 class="text-xs text-lime-900/50 dark:text-lime-300/50 font-bold">Skills and Technology</h3>
+
+            <div class="flex items-center justify-center flex-wrap gap-3 lg:gap-5 px-5">
+                <!-- JavaScript -->
+                <span class="flex items-center justify-center gap-2 lg:gap-3 p-2 px-4 rounded-full bg-lime-600/20 dark:bg-lime-500/20 dark:shadow-lg dark:shadow-black/20 font-bold cursor-default">
+                    <!-- JavaScript icon -->
+                    <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15">
+                        <path fill="currentColor" fill-rule="evenodd" d="M15 0H0v15h15zM8 8a2 2 0 0 1 2-2h1.167C12.179 6 13 6.82 13 7.833V8h-1v-.167A.833.833 0 0 0 11.167 7H10a1 1 0 0 0 0 2h1a2 2 0 1 1 0 4h-1a2 2 0 0 1-2-2h1a1 1 0 0 0 1 1h1a1 1 0 1 0 0-2h-1a2 2 0 0 1-2-2M6 6v5a1 1 0 1 1-2 0H3a2 2 0 1 0 4 0V6z" clip-rule="evenodd" />
+                    </svg>
+                    <p>JavaScript</p>
+                </span>
+
+                <!-- CSS -->
+                <span class="flex items-center justify-center gap-2 lg:gap-3 p-2 px-4 rounded-full bg-lime-600/20 dark:bg-lime-500/20 dark:shadow-lg dark:shadow-black/20 font-bold cursor-default">
+                    <!-- CSS icon -->
+                    <svg class="w-7" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="m3 2l1.6 17.8L12 22l7.5-2.2L21 2zm13.3 14.7L12 18l-4.3-1.2l-.3-3.1h2.1l.2 1.5l2.3.6l2.3-.6l.3-3H7.3l-.2-2h7.7l.1-2H7l-.2-2h10.6l-1 10.6Z" />
+                    </svg>
+                    <p>CSS</p>
+                </span>
+
+                <!-- HTML -->
+                <span class="flex items-center justify-center gap-2 lg:gap-3 p-2 px-4 rounded-full bg-lime-600/20 dark:bg-lime-500/20 dark:shadow-lg dark:shadow-black/20 font-bold cursor-default">
+                    <!-- HTML icon -->
+                    <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                        <path fill="currentColor" d="m0 32l34.9 395.8L191.5 480l157.6-52.2L384 32zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4l-97.9 27v.3h-1.1l-98.7-27.3l-6-75.8h47.7L138 320l53.5 14.5l53.7-14.5l6-62.2H84.3L71.5 112.2h241.1z" />
+                    </svg>
+                    <p>HTML</p>
+                </span>
+
+                <!-- Git -->
+                <span class="flex items-center justify-center gap-2 lg:gap-3 p-2 px-4 rounded-full bg-lime-600/20 dark:bg-lime-500/20 dark:shadow-lg dark:shadow-black/20 font-bold cursor-default">
+                    <!-- Git icon -->
+                    <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                        <path fill="currentColor" d="M15.698 7.287L8.712.302a1.03 1.03 0 0 0-1.457 0l-1.45 1.45l1.84 1.84a1.223 1.223 0 0 1 1.55 1.56l1.773 1.774a1.224 1.224 0 0 1 1.267 2.025a1.226 1.226 0 0 1-2.002-1.334L8.58 5.963v4.353a1.226 1.226 0 1 1-1.008-.036V5.887a1.226 1.226 0 0 1-.666-1.608L5.093 2.465l-4.79 4.79a1.03 1.03 0 0 0 0 1.457l6.986 6.986a1.03 1.03 0 0 0 1.457 0l6.953-6.953a1.03 1.03 0 0 0 0-1.457" />
+                    </svg>
+                    <p>Git</p>
+                </span>
+
+                <!-- TailwindCSS -->
+                <span class="flex items-center justify-center gap-2 lg:gap-3 p-2 px-4 rounded-full bg-lime-600/20 dark:bg-lime-500/20 dark:shadow-lg dark:shadow-black/20 font-bold cursor-default">
+                    <!-- TalwindCSS icon -->
+                    <svg class="w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M12 6c-2.67 0-4.33 1.33-5 4c1-1.33 2.17-1.83 3.5-1.5c.76.19 1.31.74 1.91 1.35c.98 1 2.09 2.15 4.59 2.15c2.67 0 4.33-1.33 5-4c-1 1.33-2.17 1.83-3.5 1.5c-.76-.19-1.3-.74-1.91-1.35C15.61 7.15 14.5 6 12 6m-5 6c-2.67 0-4.33 1.33-5 4c1-1.33 2.17-1.83 3.5-1.5c.76.19 1.3.74 1.91 1.35C8.39 16.85 9.5 18 12 18c2.67 0 4.33-1.33 5-4c-1 1.33-2.17 1.83-3.5 1.5c-.76-.19-1.3-.74-1.91-1.35C10.61 13.15 9.5 12 7 12" />
+                    </svg>
+                    <p>TalwindCSS</p>
+                </span>
+
+                <!-- React -->
+                <span class="flex items-center justify-center gap-2 lg:gap-3 p-2 px-4 rounded-full bg-lime-600/20 dark:bg-lime-500/20 dark:shadow-lg dark:shadow-black/20 font-bold cursor-default">
+                    <!-- React.js icon -->
+                    <svg class="w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M12 10.11c1.03 0 1.87.84 1.87 1.89c0 1-.84 1.85-1.87 1.85c-1.03 0-1.87-.85-1.87-1.85c0-1.05.84-1.89 1.87-1.89M7.37 20c.63.38 2.01-.2 3.6-1.7c-.52-.59-1.03-1.23-1.51-1.9a22.7 22.7 0 0 1-2.4-.36c-.51 2.14-.32 3.61.31 3.96m.71-5.74l-.29-.51c-.11.29-.22.58-.29.86c.27.06.57.11.88.16zm6.54-.76l.81-1.5l-.81-1.5c-.3-.53-.62-1-.91-1.47C13.17 9 12.6 9 12 9c-.6 0-1.17 0-1.71.03c-.29.47-.61.94-.91 1.47L8.57 12l.81 1.5c.3.53.62 1 .91 1.47c.54.03 1.11.03 1.71.03c.6 0 1.17 0 1.71-.03c.29-.47.61-.94.91-1.47M12 6.78c-.19.22-.39.45-.59.72h1.18c-.2-.27-.4-.5-.59-.72m0 10.44c.19-.22.39-.45.59-.72h-1.18c.2.27.4.5.59.72M16.62 4c-.62-.38-2 .2-3.59 1.7c.52.59 1.03 1.23 1.51 1.9c.82.08 1.63.2 2.4.36c.51-2.14.32-3.61-.32-3.96m-.7 5.74l.29.51c.11-.29.22-.58.29-.86c-.27-.06-.57-.11-.88-.16zm1.45-7.05c1.47.84 1.63 3.05 1.01 5.63c2.54.75 4.37 1.99 4.37 3.68c0 1.69-1.83 2.93-4.37 3.68c.62 2.58.46 4.79-1.01 5.63c-1.46.84-3.45-.12-5.37-1.95c-1.92 1.83-3.91 2.79-5.38 1.95c-1.46-.84-1.62-3.05-1-5.63c-2.54-.75-4.37-1.99-4.37-3.68c0-1.69 1.83-2.93 4.37-3.68c-.62-2.58-.46-4.79 1-5.63c1.47-.84 3.46.12 5.38 1.95c1.92-1.83 3.91-2.79 5.37-1.95M17.08 12c.34.75.64 1.5.89 2.26c2.1-.63 3.28-1.53 3.28-2.26c0-.73-1.18-1.63-3.28-2.26c-.25.76-.55 1.51-.89 2.26M6.92 12c-.34-.75-.64-1.5-.89-2.26c-2.1.63-3.28 1.53-3.28 2.26c0 .73 1.18 1.63 3.28 2.26c.25-.76.55-1.51.89-2.26m9 2.26l-.3.51c.31-.05.61-.1.88-.16c-.07-.28-.18-.57-.29-.86zm-2.89 4.04c1.59 1.5 2.97 2.08 3.59 1.7c.64-.35.83-1.82.32-3.96c-.77.16-1.58.28-2.4.36c-.48.67-.99 1.31-1.51 1.9M8.08 9.74l.3-.51c-.31.05-.61.1-.88.16c.07.28.18.57.29.86zm2.89-4.04C9.38 4.2 8 3.62 7.37 4c-.63.35-.82 1.82-.31 3.96a22.7 22.7 0 0 1 2.4-.36c.48-.67.99-1.31 1.51-1.9" />
+                    </svg>
+                    <p>React.js</p>
+                </span>
+            </div>
+
         </section>
 
         <!-- Contact -->
