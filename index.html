@@ -273,32 +273,39 @@
         </section>
 
         <!-- Contact -->
-        <section id="contact" class="min-h-[80vh] flex flex-col items-center justify-around snap-start bg-lime-500/10 dark:bg-black/50">
-            <h2>Contact Me</h2>
+        <section id="contact" class="min-h-[80vh] flex flex-col items-center justify-center gap-10 lg:gap-32 snap-start bg-lime-500/10 dark:bg-black/50 py-16 lg:py-20 px-5">
+            <h2 class="text-xl">Contact <span class="text-lime-600 dark:text-lime-300 font-bold text-2xl">Me</span></h2>
 
-            <div>
-                <p>
-                    I am actively seeking junior roles on a diverse team where I can learn and improve my skills. I am open to full-time and part-time opportunities.
-                </p>
-                <p>
-                    If you'd like to connect, or make ay inquiries, I'd love to hear from you!
-                </p>
+            <div class="flex flex-col lg:flex-row items-center justify-center lg:items-start gap-10 lg:gap-20">
+                <div class="flex flex-col items-center justify-center gap-5 w-5/6 max-w-[20rem] text-center lg:text-left">
+                    <p>
+                        I am actively seeking junior roles on a diverse team where I can learn and improve my skills. I am open to full-time and part-time opportunities.
+                    </p>
+                    <p>
+                        If you'd like to connect, or make ay inquiries, I'd love to hear from you!
+                    </p>
+                </div>
+
+                <form id="contact-form" class="flex flex-col items-start justify-center gap-5 lg:gap-20max-w-[60rem] p-5 lg:p-10 rounded-lg bg-lime-500/20" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="c5a061dc-33cd-4f6e-aa0c-2966df9b8a9d">
+                    <input type="hidden" id="subject" name="subject">
+                    <input type="hidden" name="redirect">
+
+                    <label for="name" class="flex flex-col w-full">
+                        <span class="font-semibold">Name:</span>
+                        <input class="text-lime-950 py-1 px-2 w-full rounded-lg" type="text" name="name" id="name" placeholder="Enter your name" required>
+                    </label>
+                    <label for="email" class="flex flex-col w-full">
+                        <span class="font-semibold">Email:</span>
+                        <input class="text-lime-950 py-1 px-2 w-full rounded-lg" type="email" name="email" id="email" placeholder="Enter your email" required>
+                    </label>
+                    <label for="message" class="flex flex-col w-full">
+                        <span class="font-semibold">Message:</span>
+                        <textarea class="text-lime-950 py-1 px-2 w-full rounded-lg" name="message" id="message" placeholder="Start typing your message..." rows="4" required></textarea>
+                    </label>
+                    <button class="dark:bg-lime-300 dark:text-lime-950 bg-lime-950 text-lime-50 flex justify-center items-center font-semibold py-2 px-3 rounded-lg w-full" type="submit">Send</button>
+                </form>
             </div>
-
-            <form action="https://api.web3forms.com/submit" method="POST">
-                <input type="hidden" name="access_key" value="c5a061dc-33cd-4f6e-aa0c-2966df9b8a9d">
-
-                <label for="name">Name:
-                    <input type="text" name="name" id="name" required>
-                </label>
-                <label for="email">Email:
-                    <input type="email" name="email" id="email" required>
-                </label>
-                <label for="message">Message:
-                    <textarea name="message" id="message" required></textarea>
-                </label>
-                <button type="submit">Send</button>
-            </form>
         </section>
 
         <!-- Resume -->

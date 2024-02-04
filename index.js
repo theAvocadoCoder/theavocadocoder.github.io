@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
         burgerIcon = document.querySelector("#burger-icon"),
         closeIcon = document.querySelector("#close-icon"),
         viewResume = document.querySelector("#view-resume"),
+        contactForm = document.querySelector("form#contact-form"),
+        formSubject = document.querySelector("input#subject"),
         resumeContainer = document.querySelector("#resume-container"),
         resumeBgDiv = document.querySelector("#resume-bg-div"),
         resumeCanvas = document.querySelector("#resume-canvas"),
@@ -43,6 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    contactForm.addEventListener("submit", handleContactSubmit);
+
     viewResume.addEventListener("click", toggleResume);
 
     downloadResume.addEventListener("click", () => {
@@ -66,6 +70,18 @@ document.addEventListener("DOMContentLoaded", () => {
         logoImg.classList.toggle("z-20");
         logoText.classList.toggle("z-20");
         logoText.classList.toggle("hidden");
+    }
+
+    function handleContactSubmit(e) {
+        e.preventDefault();
+
+        const name = document.querySelector("#contact-form input[name='name']").value;
+        const redirect = document.querySelector("#contact-form input[name='redirect']");
+
+        formSubject.value = `${name} reached out on your site`;
+        redirect.value = `${baseUrl}/thanks.html`;
+
+        contactForm.submit();
     }
 
     function toggleResume() {
