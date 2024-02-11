@@ -1,138 +1,57 @@
-<div id="header" align="center">
-  <img src="./assets/img/kelechi-nwauwa-profile.jpg" width="100" style="border-radius:100%" />
-</div>
+# theAvocadoCoder Portfolio Site
 
-<div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?size=35&duration=4500&color=1AA34A&vCenter=true&center=true&width=520&lines=Kelechi+Nwauwa+🥑;FrontEnd+Developer;JavaScript+Aficionado">
-</div>
+![Portfolio Site Image](./assets/theavocadocoder-site.png)
 
-<div id="badges" align="center">
-  <a href="https://linkedin.com/in/kelechi-nwauwa">
-    <img src="https://img.shields.io/badge/LinkedIn-blue?style=flat&logo=linkedin&logoColor=white" alt="LinkedIn Badge" />
-  </a>
-  <a href="mailto:nwauwa.kelechi.e@gmail.com">
-    <img src="https://img.shields.io/badge/Email-red?style=flat&logo=gmail&logoColor=white" alt="Email Badge" />
-  </a>
-</div>
+## Overview
 
-<h1 align="center">
-  Welcome, internet stranger
-  <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"/>
-</h1>
+Welcome to my portfolio site! This website serves as a showcase of my work and a central hub where you can find information about me. Created using HTML, Tailwind CSS, and JavaScript, the site features an avocado-themed design inspired by my GitHub username, 'theavocadocoder.' It includes a light and dark mode toggle, fully mobile-responsive design, and sections covering my projects, about me, and how to contact me.
 
-<p align="center">
-  It appears you've stumbled across my portfolio. Please, stick around. Browse a repo, maybe raise an issue, maybe leave a star. I'm open to collaborations, contract work and employment so don't be shy, feel free to reach out :)
-</p>
+## Technologies Used
 
-## :mailbox: How to Reach Me :
+- **HTML, Tailwind CSS, JavaScript**: The core technologies for building the portfolio.
+- **pdf.js Library**: Utilized for rendering the PDF resume on the site.
+- **Web3Forms**: Integrated for handling the contact form and sending messages to my email address.
 
-- [![Linkedin Badge](https://img.shields.io/badge/LinkedIn-blue?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/kelechi-nwauwa)
+## Design Considerations
 
-- [![Email Badge](https://img.shields.io/badge/Email-red?style=flat&logo=gmail&logoColor=white)](mailto:nwauwa.kelechi.e@gmail.com)
+- **Avocado Theme**: Inspired by the avocado theme, the light mode reflects a guacamole aesthetic, while the dark mode features dark greens and neon accents for a techy vibe.
+- **Responsive Design**: Ensured that the site is fully responsive, providing an optimal viewing experience across various screen sizes.
 
-## :fire: My Stats :
+## How to Explore the Portfolio
 
-[![GitHub Streak](http://github-readme-streak-stats.herokuapp.com?user=theavocadocoder&theme=react&date_format=M%20j%5B%2C%20Y%5D&fire=FFFEFE&currStreakNum=FFFEFE&dates=FFFEFE&background=0D1117&ring=5BCDEC&sideNums=FFFEFE")](https://git.io/streak-stats)
+1. Visit the portfolio site by clicking [here](https://agile-learning-institute.github.io/member-kay-portfolio/).
+2. Toggle between light and dark modes to experience different visual themes.
+3. Navigate through the hero, projects, about, and contact sections.
+4. Explore project cards, view live sites, check source code, and interact with the contact form.
+5. Send me a message via my contact form.
+6. Access my resume and optionally download it.
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=theAvocadoCoder&layout=compact&theme=vision-friendly-dark)](https://github.com/anuraghazra/github-readme-stats)
+## Site Features
 
-## :hammer_and_wrench: My Arsenal :
+1. **Hero Section**: Contains a brief bio with links to my GitHub, LinkedIn, and email.
+2. **Projects Section**: Features project cards with live site images, project descriptions, and buttons for accessing live sites and source code.
+3. **About Section**: Includes an image, a bio, and a list of technologies I use.
+4. **Contact Section**: Presents a little writeup and a contact form that utilizes Web3Forms for sending messages to my email.
+5. **Resume**: Access the resume section through the navigation, view the resume on the screen, and optionally use the provided button to download the resume.
 
-<p>
-  <img src="https://img.shields.io/badge/HTML5-B7E4C7?style=flat&logo=html5" height=25>
-  <img src="https://img.shields.io/badge/CSS3-B7E4C7?style=flat&logo=css3&logoColor=2388C3" height=25>
-  <img src="https://img.shields.io/badge/SaSS-B7E4C7?style=flat&logo=sass" height=25>
-  <img src="https://img.shields.io/badge/TailwindCSS-B7E4C7?style=flat&logo=tailwindcss" height=25>
-  <img src="https://img.shields.io/badge/JavaScript-B7E4C7?style=flat&logo=javascript" height=25>
-  <img src="https://img.shields.io/badge/Json-B7E4C7?style=flat&logo=json" height=25>
-  <img src="https://img.shields.io/badge/Typescript-B7E4C7?style=flat&logo=typescript" height=25>
-  <img src="https://img.shields.io/badge/React-B7E4C7?style=flat&logo=react" height=25>
-  <img src="https://img.shields.io/badge/Redux-B7E4C7?style=flat&logo=redux&logoColor=764ABC" height=25>
-  <img src="https://img.shields.io/badge/Node.JS-B7E4C7?style=flat&logo=nodedotjs" height=25>
-  <img src="https://img.shields.io/badge/MongoDB-B7E4C7?style=flat&logo=mongodb" height=25>
-  <img src="https://img.shields.io/badge/Laravel-B7E4C7?style=flat&logo=laravel" height=25>
-  <img src="https://img.shields.io/badge/Figma-B7E4C7?style=flat&logo=figma" height=25>
-  <img src="https://img.shields.io/badge/Postman-B7E4C7?style=flat&logo=postman" height=25>
-  <img src="https://img.shields.io/badge/Linear-B7E4C7?style=flat&logo=linear" height=25>
-  <img src="https://img.shields.io/badge/Visual_Studio-B7E4C7?style=flat&logo=visual%20studio&logoColor=007ACC" height=25>
-  <img src="https://img.shields.io/badge/GIT-B7E4C7?style=flat&logo=git" height=25>
-</p>
+## Acknowledgments
 
-## :push_pin: My Affiliated Projects :
+### Web3Forms
 
-<table bordercolor="#66b2b2">
-  
-  <tr>
-    <td width="50%" valign="top">
-      <h3 align="center">Carmel Homes</h3>
-      <br />
-      <a target="_blank" href="http://www.carmelhomesltd.com">
-        <img src="./assets/img/carmel.png" width="100%" alt="Carmel Homes"/>
-      </a>
-      <br />
-      <p align="center">
-        <a href="https://github.com/theavocadocoder/carmel-homes" target="_blank">
-          <img src="https://img.shields.io/badge/Repo-164C78?style=flat&logo=github" height=25>
-        </a>
-        <a href="https://www.carmelhomesltd.com" target="blank">
-          <img src="https://img.shields.io/badge/Website-164C78?style=flat" height=25>
-        </a> 
-      </p>
-      <p><strong>React, Zustand, TailwindCSS </strong> - Carmel Homes Limited is a real estate company that offers a comprehensive rent-to-own program. On the company website, interested potential home owners can learn about the program and apply or book a callback. Investors and other property experts are invited to partner with the company.</p>
-    </td>
-    <td width="50%" valign="top">
-      <h3 align="center">Plantify</h3>
-      <br />
-      <a target="_blank" href="https://plantify-app.netlify.app">
-        <img src="./assets/img/plantify.png" width="100%" alt="Plantify"/>
-      </a>
-      <br />
-      <p align="center">
-        <a href="https://github.com/theAvocadoCoder/plantify" target="_blank">
-          <img src="https://img.shields.io/badge/Repo-164C78?style=flat&logo=github" height=25>
-        </a>
-        <a href="https://plantify-app.netlify.app" target="blank">
-          <img src="https://img.shields.io/badge/Website-164C78?style=flat" height=25>
-        </a> 
-      </p>
-      <p><strong>React, SCSS </strong> -  A plant identification web app</p>
-    </td>
-  </tr>
-  
-  <tr>
-    <td width="50%" valign="top">
-      <h3 align="center">Pixelite</h3>
-      <br />
-      <a target="_blank" href="https://theavocadocoder.github.io/pixelite/">
-        <img src="./assets/img/pixelite.gif" width="100%" alt="Pixelite"/>
-      </a>
-      <br />
-      <p align="center">
-        <a href="https://github.com/theAvocadoCoder/pixelite" target="_blank">
-          <img src="https://img.shields.io/badge/Repo-164C78?style=flat&logo=github" height=25>
-        </a>
-        <a href="https://theavocadocoder.github.io/pixelite" target="blank">
-          <img src="https://img.shields.io/badge/Website-164C78?style=flat" height=25>
-        </a> 
-      </p>
-      <p><strong>React, TailwindCSS</strong> - A pixel art creation web app.</p>
-    </td>
-    <td width="50%" valign="top">
-      <h3 align="center">Random Quotes Generator</h3>
-      <br />
-      <a target="_blank" href="https://theavocadocoder.github.io/random-quotes-generator">
-        <img src="./assets/img/rqg.png" width="100%"  alt="Random Quotes Generator">
-      </a>
-      <br />
-      <p align="center">
-        <a href="https://github.com/theAvocadoCoder/random-quotes-generator" target="_blank">
-          <img src="https://img.shields.io/badge/Repo-164C78?style=flat&logo=github" height=25>
-        </a>
-        <a href="https://theavocadocoder.github.io/random-quotes-generator" target="blank">
-          <img src="https://img.shields.io/badge/Website-164C78?style=flat" height=25>
-        </a> 
-      </p>
-      <p><strong>React, CSS </strong> - A random quote generator</p>
-    </td>
-  </tr>
-</table>
+The contact form sends messages to my email address using Web3Forms, a free platform for receiving messages from site visitors. You can find out more about them [here](https://web3forms.com/).
+
+### PDF.js
+
+The PDF.js library is an open source project by Mozilla whihc I utilized for rendering my resume PDF on the site. You can find out more about them on [their website](https://mozilla.github.io/pdf.js/).
+
+
+
+## About Me
+
+I am a junior developer with a passion for combining technology and creativity. I am enthusiastic about creating dynamic and user-friendly web sites and web applications.
+
+I am not a designer but aimed for a visually appealing and functional design inspired by dribbble designs for developer portfolios. The avocado theme adds a personal touch to the overall aesthetic.
+
+Feel free to reach out if you have any questions or feedback!
+
+Thank you for visiting my portfolio site! 🥑✨
