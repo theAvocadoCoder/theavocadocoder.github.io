@@ -1,4 +1,36 @@
 document.addEventListener("DOMContentLoaded", () => {
+    //  Render Resume
+    pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.0.379/build/pdf.worker.mjs";
+
+    pdfjsLib.getDocument("./assets/resume.pdf").promise.then(function(pdf) {
+
+        pdf.getPage(1).then(function(page) {
+
+            const viewport = page.getViewport({
+                scale: 1
+            });
+
+            resumeCanvas.height = viewport.height;
+
+            resumeCanvas.width = viewport.width;
+
+            const ctx = resumeCanvas.getContext('2d');
+
+            const renderContext = {
+
+                canvasContext: ctx,
+
+                viewport: viewport
+
+            };
+
+            page.render(renderContext);
+
+        });
+
+    });
+
+
     // Query Elements
     const logoLink = document.querySelector("#logo-link"),
         logoImg = document.querySelector("#logo-img"),
@@ -19,9 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const navLinks = document.querySelectorAll("#nav-list a");
 
-    const baseUrl = window.location.hostname == "127.0.0.1"
-        ? window.location.origin
-        : "/member-kay-portfolio";
+    const baseUrl = window.location.host + window.location.pathname;
     
     const resumeUrl = baseUrl + "/assets/resume.pdf";
 
@@ -100,36 +130,4 @@ document.addEventListener("DOMContentLoaded", () => {
             ? document.body.style.overflow = "hidden"
             : document.body.style.overflow = "scroll";
     }
-
-
-    //  Render Resume
-    pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.0.379/build/pdf.worker.mjs";
-
-    pdfjsLib.getDocument("./assets/resume.pdf").promise.then(function(pdf) {
-
-        pdf.getPage(1).then(function(page) {
-
-            const viewport = page.getViewport({
-                scale: 1
-            });
-
-            resumeCanvas.height = viewport.height;
-
-            resumeCanvas.width = viewport.width;
-
-            const ctx = resumeCanvas.getContext('2d');
-
-            const renderContext = {
-
-                canvasContext: ctx,
-
-                viewport: viewport
-
-            };
-
-            page.render(renderContext);
-
-        });
-
-    });
 });
