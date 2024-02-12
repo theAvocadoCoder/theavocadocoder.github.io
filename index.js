@@ -1,36 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    //  Render Resume
-    pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.0.379/build/pdf.worker.mjs";
-
-    pdfjsLib.getDocument("./assets/resume.pdf").promise.then(function(pdf) {
-
-        pdf.getPage(1).then(function(page) {
-
-            const viewport = page.getViewport({
-                scale: 1
-            });
-
-            resumeCanvas.height = viewport.height;
-
-            resumeCanvas.width = viewport.width;
-
-            const ctx = resumeCanvas.getContext('2d');
-
-            const renderContext = {
-
-                canvasContext: ctx,
-
-                viewport: viewport
-
-            };
-
-            page.render(renderContext);
-
-        });
-
-    });
-
-
     // Query Elements
     const logoLink = document.querySelector("#logo-link"),
         logoImg = document.querySelector("#logo-img"),
@@ -42,20 +10,36 @@ document.addEventListener("DOMContentLoaded", () => {
         closeIcon = document.querySelector("#close-icon"),
         viewResume = document.querySelector("#view-resume"),
         contactForm = document.querySelector("form#contact-form"),
-        formSubject = document.querySelector("input#subject"),
+        // formSubject = document.querySelector("input#subject"),
         resumeContainer = document.querySelector("#resume-container"),
-        resumeBgDiv = document.querySelector("#resume-bg-div"),
-        resumeCanvas = document.querySelector("#resume-canvas"),
-        downloadResume = document.querySelector("#download-resume"),
+        // resumeBgDiv = document.querySelector("#resume-bg-div"),
+        // downloadResume = document.querySelector("#download-resume"),
         closeResume = document.querySelector("#close-resume");
 
     const navLinks = document.querySelectorAll("#nav-list a");
 
-    const baseUrl = window.location.host + window.location.pathname;
-    
-    const resumeUrl = baseUrl + "/assets/resume.pdf";
 
-    logoLink.setAttribute("href", baseUrl+"/");
+    const baseUrl = `${window.location.origin}${window.location.pathname}`;
+    
+    logoLink.setAttribute("href", baseUrl);
+
+    // Render Resume
+    const resumeUrl = baseUrl + "assets/Kelechi_Nwa-uwa_Resume.pdf";
+
+    // console.log(location.origin, location.host, location.pathname, "baseUrl =", baseUrl, "resumeUrl =", resumeUrl);
+
+    const resumeObj = document.createElement("object");
+    
+    resumeObj.setAttribute("type", "application/pdf");
+
+    resumeObj.setAttribute("data", resumeUrl);
+
+    resumeObj.setAttribute("width", `${window.innerWidth > 768 ? "660" : window.innerWidth - 20}`);
+
+    resumeObj.setAttribute("height", `${window.innerWidth > 768 ? "960" : window.innerHeight * .85}`);
+
+    document.querySelector("#resume-bg-div>div").appendChild(resumeObj);
+
 
     // Event Listeners
     menuButton.addEventListener("click", toggleNav);
@@ -79,14 +63,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     viewResume.addEventListener("click", toggleResume);
 
-    downloadResume.addEventListener("click", () => {
-        const resumeLink = document.createElement("a");
-        resumeLink.style.display = "hidden";
-        document.body.appendChild(resumeLink);
-        resumeLink.setAttribute("href", resumeUrl);
-        resumeLink.setAttribute("download", "Kelechi_Nwa-uwa_Resume");
-        resumeLink.click();
-    })
+    // downloadResume.addEventListener("click", () => {
+    //     const resumeLink = document.createElement("a");
+    //     resumeLink.style.display = "hidden";
+    //     document.body.appendChild(resumeLink);
+    //     resumeLink.setAttribute("href", resumeUrl);
+    //     resumeLink.setAttribute("download", "Kelechi_Nwa-uwa_Resume");
+    //     resumeLink.click();
+    // })
 
     closeResume.addEventListener("click", toggleResume);
 
@@ -104,12 +88,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function handleContactSubmit(e) {
         e.preventDefault();
-
-        const name = document.querySelector("#contact-form input[name='name']").value;
-        const redirect = document.querySelector("#contact-form input[name='redirect']");
-
-        formSubject.value = `${name} reached out on your site`;
-        redirect.value = `${baseUrl}/thanks.html`;
+        const [name, next, subject] = document.querySelectorAll("input:is(#name, [name=_next], [name=_subject])")
+        next.value = `${baseUrl}/thankyou.html`;
+        subject.value = `${name} reached out to you!`;
 
         contactForm.submit();
     }
@@ -121,13 +102,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         resumeContainer.classList.toggle("hidden");
-        // resumeContainer.classList.toggle("flex");
-        // resumeContainer.classList.toggle("items-center");
-        // resumeContainer.classList.toggle("justify-center");
         
         // Disable body scroll when resume is open
         !resumeContainer.classList.contains("hidden")
             ? document.body.style.overflow = "hidden"
-            : document.body.style.overflow = "scroll";
+            : document.body.style.overflowY = "scroll";
     }
 });

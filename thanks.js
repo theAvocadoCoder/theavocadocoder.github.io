@@ -1,7 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const backToSite = document.querySelector("#back-to-site");
 
-    backToSite.addEventListener("click", () => {
-        history.back();
-    })
+    document.querySelector("#back-to-site").href = `${window.location.origin}/`;
 })
