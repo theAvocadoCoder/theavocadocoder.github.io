@@ -92,9 +92,9 @@ document.addEventListener("DOMContentLoaded", () => {
         replyTo.setAttribute("value", `${email.value}`);
         subject.setAttribute("value", `${name.value} reached out to you!`);
 
-        console.log(name, email, replyTo, next, subject);
+        // console.log(name, email, replyTo, next, subject);
 
-        // contactForm.submit();
+        contactForm.submit();
     }
 
     function toggleResume() {
