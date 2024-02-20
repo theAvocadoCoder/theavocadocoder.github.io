@@ -8,12 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
         navList = document.querySelector("#nav-list"),
         burgerIcon = document.querySelector("#burger-icon"),
         closeIcon = document.querySelector("#close-icon"),
-        viewResume = document.querySelector("#view-resume"),
         contactForm = document.querySelector("form#contact-form"),
-        // formSubject = document.querySelector("input#subject"),
+        viewResume = document.querySelector("#view-resume"),
         resumeContainer = document.querySelector("#resume-container"),
-        // resumeBgDiv = document.querySelector("#resume-bg-div"),
-        // downloadResume = document.querySelector("#download-resume"),
         closeResume = document.querySelector("#close-resume");
 
     const navLinks = document.querySelectorAll("#nav-list a");
@@ -88,9 +85,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function handleContactSubmit(e) {
         e.preventDefault();
-        const [name, next, subject] = document.querySelectorAll("input:is(#name, [name=_next], [name=_subject])")
-        next.value = `${baseUrl}/thankyou.html`;
-        subject.value = `${name} reached out to you!`;
+        const [name, email] = document.querySelectorAll("form input[required");
+        const [next, replyTo, subject] = document.querySelectorAll("input:is([name=_next],[name=_replyto],[name=_subject])");
+
+        next.setAttribute("value", `${baseUrl}thanks.html`);
+        replyTo.setAttribute("value", `${email.value}`);
+        subject.setAttribute("value", `${name.value} reached out to you!`);
+
+        // console.log(name, email, replyTo, next, subject);
 
         contactForm.submit();
     }
