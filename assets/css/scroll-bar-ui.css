@@ -1,9 +1,0 @@
-body::-webkit-scrollbar, 
-#project-tiles-div::-webkit-scrollbar {
-  display: none
-}
-
-body,
-#project-tiles-div {
-  scroll-behavior: smooth;
-}
