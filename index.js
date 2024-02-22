@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     noPdfSupport.classList.add("mt-20");
 
-    downloadLink.classList.add("text-lime-600", "dark:text-lime-300", "font-bold", "mx-auto");
+    downloadLink.classList.add("text-lime-600", "dark:text-lime-300", "font-bold", "px-5", "text-center");
 
     downloadLink.setAttribute("href", resumeUrl);
     

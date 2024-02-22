@@ -616,11 +616,6 @@ video {
   z-index: 20;
 }
 
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .mt-16 {
   margin-top: 4rem;
 }
