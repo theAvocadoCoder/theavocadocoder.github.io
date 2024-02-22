@@ -616,8 +616,17 @@ video {
   z-index: 20;
 }
 
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .mt-16 {
   margin-top: 4rem;
+}
+
+.mt-20 {
+  margin-top: 5rem;
 }
 
 .inline {
@@ -654,10 +663,6 @@ video {
 
 .h-\[85\%\] {
   height: 85%;
-}
-
-.h-\[90\%\] {
-  height: 90%;
 }
 
 .h-dvh {
@@ -807,10 +812,6 @@ video {
 
 .gap-5 {
   gap: 1.25rem;
-}
-
-.overflow-y-scroll {
-  overflow-y: scroll;
 }
 
 .text-wrap {
