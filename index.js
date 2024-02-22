@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
         contactForm = document.querySelector("form#contact-form"),
         viewResume = document.querySelector("#view-resume"),
         resumeContainer = document.querySelector("#resume-container"),
+        downloadResume = document.querySelector("#download-resume"),
         closeResume = document.querySelector("#close-resume");
 
     const navLinks = document.querySelectorAll("#nav-list a");
@@ -21,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     logoLink.setAttribute("href", baseUrl);
 
     // Render Resume
-    const resumeUrl = baseUrl + "assets/Kelechi_Nwa-uwa_Resume.pdf";
+    const resumeUrl = baseUrl + "assets/Kelechi_Nwauwa_Resume.pdf";
 
     // console.log(location.origin, location.host, location.pathname, "baseUrl =", baseUrl, "resumeUrl =", resumeUrl);
 
@@ -33,7 +34,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     resumeObj.setAttribute("width", `${window.innerWidth > 768 ? "660" : window.innerWidth - 20}`);
 
-    resumeObj.setAttribute("height", `${window.innerWidth > 768 ? "960" : window.innerHeight * .85}`);
+    resumeObj.setAttribute("height", `${window.innerWidth > 768 ? "975" : window.innerHeight * .85}`);
+    
+    resumeObj.classList.add("flex", "flex-col", "items-center", "justify-start");
+    
+    const noPdfSupport = document.createElement("p");
+
+    const downloadLink = document.createElement("a");
+    
+    noPdfSupport.appendChild(document.createTextNode("Oops! Your browser doesn't support PDFs!"));
+    
+    downloadLink.appendChild(document.createTextNode("Click here to download my resume as a PDF instead"));
+
+    noPdfSupport.classList.add("mt-20");
+
+    downloadLink.classList.add("text-lime-600", "dark:text-lime-300", "font-bold", "mx-auto");
+
+    downloadLink.setAttribute("href", resumeUrl);
+    
+    downloadLink.setAttribute("download", "Kelechi_Nwauwa_Resume");
+
+    resumeObj.appendChild(noPdfSupport);
+
+    resumeObj.appendChild(downloadLink);
 
     document.querySelector("#resume-bg-div>div").appendChild(resumeObj);
 
@@ -60,14 +83,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     viewResume.addEventListener("click", toggleResume);
 
-    // downloadResume.addEventListener("click", () => {
-    //     const resumeLink = document.createElement("a");
-    //     resumeLink.style.display = "hidden";
-    //     document.body.appendChild(resumeLink);
-    //     resumeLink.setAttribute("href", resumeUrl);
-    //     resumeLink.setAttribute("download", "Kelechi_Nwa-uwa_Resume");
-    //     resumeLink.click();
-    // })
+    downloadResume.addEventListener("click", () => {
+        const resumeLink = document.createElement("a");
+        resumeLink.style.display = "hidden";
+        document.body.appendChild(resumeLink);
+        resumeLink.setAttribute("href", resumeUrl);
+        resumeLink.setAttribute("download", "Kelechi_Nwa-uwa_Resume");
+        resumeLink.click();
+    })
 
     closeResume.addEventListener("click", toggleResume);
 
