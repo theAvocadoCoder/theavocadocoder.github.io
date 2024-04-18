@@ -11,9 +11,11 @@
     <!-- Dark mode support for system preference -->
     <script>
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark')
+            document.documentElement.classList.add('dark');
+            document.addEventListener("DOMContentLoaded", ()=>{document.querySelector("project-card").classList.add('dark')});
         } else {
-            document.documentElement.classList.remove('dark')
+            document.documentElement.classList.remove('dark');
+            document.addEventListener("DOMContentLoaded", ()=>{document.querySelector("project-card").classList.remove('dark')});
         }
     </script>
 
@@ -76,7 +78,7 @@
         <!-- Hero -->
         <section id="hero" class="min-h-[80vh] flex flex-col items-center justify-center snap-start py-10 px-10 mt-16 bg-lime-500/5 dark:bg-black/40 text-center gap-5">
             <h1 class="text-3xl">Hi, I'm <span class="text-lime-600 dark:text-lime-300 font-bold text-[2.5rem] text-wrap">Kelechi Nwauwa</span></h1>
-            <p class="[line-height:1.15rem]">A junior <span class="text-lime-600 dark:text-lime-300 font-bold text-[1.5rem]">front-end</span> heavy JavaScript <span class="text-lime-600 dark:text-lime-300 font-bold text-[1.5rem]">developer</span>.</p>
+            <p class="[line-height:1.15rem]">A junior <span class="text-lime-600 dark:text-lime-300 font-bold text-[1.5rem]">front-end</span> heavy <span class="text-lime-600 dark:text-lime-300 font-bold text-[1.5rem]">web engineer</span>.</p>
             <p class="text-sm max-w-[60%]">I enjoy writing algorithms in JavaScript, bringing designs to life and squashing bugs.</p>
 
             <div class="p-10 flex flex-wrap justify-center gap-5">
@@ -110,68 +112,64 @@
 
             <p class="text-xs">Here are some of the projects I've worked on</p>
 
+            <!-- Project Card Template -->
+            <template id="projectCardTemplate">
+                <div class="projectCard__container flex flex-col items-center justify-start gap-2 lg:gap-3 p-4 rounded-lg bg-lime-600/20 dark:bg-lime-500/20 dark:shadow-lg dark:shadow-black/20 sm:max-w-72 lg:max-w-[20rem] h-[30rem]">
+                    <img src="assets/stub.png" alt="" class="projectCard__image w-full rounded-lg">
+                    <div class="h-full text-center flex flex-col items-center justify-between p-2 lg:p-3">
+                        <h3 class="projectCard__name font-extrabold text-lg">Stub name</h3>
+                        <p class="projectCard__description text-sm w-3/4">Stub description</p>
+                        <div class="w-full flex justify-between items-center">
+                            <a class="projectCard__liveSite dark:bg-lime-300 dark:text-lime-950 bg-lime-950 text-lime-100 flex justify-center items-center font-semibold py-2 px-3 rounded-lg" href="https://stub.link" target="_blank" rel="noreferrer noopener">Live Site</a>
+                            <a class="projectCard__sourceCode dark:bg-lime-300 dark:text-lime-950 bg-lime-950 text-lime-100 flex justify-center items-center font-semibold py-2 px-3 rounded-lg" href="https://stub.link" target="_blank" rel="noreferrer noopener">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <!-- Project Cards -->
             <div class="p-2 md:p-5 lg:p-10 flex flex-col items-center justify-center gap-5 xl:gap-10 md:flex-row md:flex-wrap">
                 <!-- Pixelite -->
-                <div class="flex flex-col items-center justify-start gap-2 lg:gap-3 p-4 rounded-lg bg-lime-600/20 dark:bg-lime-500/20 dark:shadow-lg dark:shadow-black/20 sm:max-w-72 lg:max-w-[20rem] h-[30rem]">
-                    <img src="assets/pixelite.png" alt="" class="w-full rounded-lg">
-                    <div class="h-full text-center flex flex-col items-center justify-between p-2 lg:p-3">
-                        <h3 class="font-extrabold text-lg">Pixelite</h3>
-                        <p class="text-sm w-3/4">Pixelite empowers digital artists to express their creativity through pixel art. Users can choose from a range of square canvas sizes, change their 'pen' color, and download their creations.</p>
-                        <div class="w-full flex justify-between items-center">
-                            <a class="dark:bg-lime-300 dark:text-lime-950 bg-lime-950 text-lime-100 flex justify-center items-center font-semibold py-2 px-3 rounded-lg" href="https://theavocadocoder.github.io/pixelite" target="_blank" rel="noreferrer noopener">Live Site</a>
-                            <a class="dark:bg-lime-300 dark:text-lime-950 bg-lime-950 text-lime-100 flex justify-center items-center font-semibold py-2 px-3 rounded-lg" href="https://github.com/theAvocadoCoder/pixelite" target="_blank" rel="noreferrer noopener">Source Code</a>
-                        </div>
-                    </div>
-                </div>
+                <project-card
+                    name="Pixelite"
+                    description="Pixelite empowers digital artists to express their creativity through pixel art. Users can choose from a range of square canvas sizes, change their 'pen' color, and download their creations."
+                    liveSite="https://theavocadocoder.github.io/pixelite"
+                    sourceCode="https://github.com/theAvocadoCoder/pixelite"
+                ></project-card>
+
                 <!-- Markdown Previewer -->
-                <div class="flex flex-col items-center justify-start gap-2 lg:gap-3 p-4 rounded-lg bg-lime-600/20 dark:bg-lime-500/20 dark:shadow-lg dark:shadow-black/20 sm:max-w-72 lg:max-w-[20rem] h-[30rem]">
-                    <img src="assets/markdown-previewer.png" alt="" class="w-full rounded-lg">
-                    <div class="h-full text-center flex flex-col items-center justify-between p-2 lg:p-3">
-                        <h3 class="font-extrabold text-lg">Markdown Previewer</h3>
-                        <p class="text-sm w-3/4">The Markdown Previewer allows users to input Markdown text in an editor and instantly see the live preview of the formatted content.</p>
-                        <div class="w-full flex justify-between items-center">
-                            <a class="dark:bg-lime-300 dark:text-lime-950 bg-lime-950 text-lime-100 flex justify-center items-center font-semibold py-2 px-3 rounded-lg" href="https://theavocadocoder.github.io/markdown-previewer" target="_blank" rel="noreferrer noopener">Live Site</a>
-                            <a class="dark:bg-lime-300 dark:text-lime-950 bg-lime-950 text-lime-100 flex justify-center items-center font-semibold py-2 px-3 rounded-lg" href="https://github.com/theAvocadoCoder/markdown-previewer" target="_blank" rel="noreferrer noopener">Source Code</a>
-                        </div>
-                    </div>
-                </div>
+                <project-card
+                    name="Markdown Previewer"
+                    description="The Markdown Previewer allows users to input Markdown text in an editor and instantly see the live preview of the formatted content."
+                    liveSite="https://theavocadocoder.github.io/pixelite"
+                    sourceCode="https://github.com/theAvocadoCoder/pixelite"
+                ></project-card>
+
                 <!-- TODO: Random Quotes Generator -->
+
                 <!-- TicTacToe -->
-                <div class="flex flex-col items-center justify-start gap-2 lg:gap-3 p-4 rounded-lg bg-lime-600/20 dark:bg-lime-500/20 dark:shadow-lg dark:shadow-black/20 sm:max-w-72 lg:max-w-[20rem] h-[30rem]">
-                    <img src="assets/tic-tac-toe.png" alt="" class="w-full rounded-lg">
-                    <div class="h-full text-center flex flex-col items-center justify-between p-2 lg:p-3">
-                        <h3 class="font-extrabold text-lg">TicTacToe</h3>
-                        <p class="text-sm w-3/4">This project is a simple implementation of the classic Tic Tac Toe game using HTML, CSS, and JavaScript.</p>
-                        <div class="w-full flex justify-between items-center">
-                            <a class="dark:bg-lime-300 dark:text-lime-950 bg-lime-950 text-lime-100 flex justify-center items-center font-semibold py-2 px-3 rounded-lg" href="https://theavocadocoder.github.io/odin_tic-tac-toe" target="_blank" rel="noreferrer noopener">Live Site</a>
-                            <a class="dark:bg-lime-300 dark:text-lime-950 bg-lime-950 text-lime-100 flex justify-center items-center font-semibold py-2 px-3 rounded-lg" href="https://github.com/theAvocadoCoder/odin_tic-tac-toe" target="_blank" rel="noreferrer noopener">Source Code</a>
-                        </div>
-                    </div>
-                </div>
+                <project-card
+                    name="TicTacToe"
+                    description="This project is a simple implementation of the classic Tic Tac Toe game using HTML, CSS, and JavaScript."
+                    liveSite="https://theavocadocoder.github.io/odin_tic-tac-toe"
+                    sourceCode="https://github.com/theAvocadoCoder/odin_tic-tac-toe"
+                ></project-card>
+
                 <!-- This Website -->
-                <div class="flex flex-col items-center justify-start gap-2 lg:gap-3 p-4 rounded-lg bg-lime-600/20 dark:bg-lime-500/20 dark:shadow-lg dark:shadow-black/20 sm:max-w-72 lg:max-w-[20rem] h-[30rem]">
-                    <img src="assets/theavocadocoder-site.png" alt="" class="w-full rounded-lg">
-                    <div class="h-full text-center flex flex-col items-center justify-between p-2 lg:p-3">
-                        <h3 class="font-extrabold text-lg">My Portfolio Site</h3>
-                        <p class="text-sm w-3/4">This portfolio site was created with HTML, CSS and JavaScript. It includes relevant information about the developer.</p>
-                        <div class="w-full flex justify-between items-center">
-                            <a class="dark:bg-lime-300 dark:text-lime-950 bg-lime-950 text-lime-100 flex justify-center items-center font-semibold py-2 px-3 rounded-lg" href="https://agile-learning-institute.github.io/member-kay-portfolio/">Live Site</a>
-                            <a class="dark:bg-lime-300 dark:text-lime-950 bg-lime-950 text-lime-100 flex justify-center items-center font-semibold py-2 px-3 rounded-lg" href="https://github.com/agile-learning-institute/member-kay-portfolio/" target="_blank" rel="noreferrer noopener">Source Code</a>
-                        </div>
-                    </div>
-                </div>
+                <project-card
+                    name="My Portfolio Site"
+                    description="This portfolio site was created with HTML, CSS and JavaScript. It includes relevant information about the developer."
+                    liveSite="/"
+                    sourceCode="https://github.com/agile-learning-institute/member-kay-portfolio/"
+                ></project-card>
+
                 <!-- Carmel Homes Ltd -->
-                <div class="flex flex-col items-center justify-start gap-2 lg:gap-3 p-4 rounded-lg bg-lime-600/20 dark:bg-lime-500/20 dark:shadow-lg dark:shadow-black/20 sm:max-w-72 lg:max-w-[20rem] h-[30rem]">
-                    <img src="assets/carmelhomes-ltd.png" alt="" class="w-full rounded-lg">
-                    <div class="h-full text-center flex flex-col items-center justify-between p-2 lg:p-3">
-                        <h3 class="font-extrabold text-lg">Carmel Homes Ltd</h3>
-                        <p class="text-sm w-3/4">This is the official website of Carmel Homes Ltd. This website, crafted using React, is designed to provide a seamless and informative experience for visitors.</p>
-                        <div class="w-full flex justify-between items-center">
-                            <a class="dark:bg-lime-300 dark:text-lime-950 bg-lime-950 text-lime-100 flex justify-center items-center font-semibold py-2 px-3 rounded-lg" href="https://carmelhomesltd.com" target="_blank" rel="noreferrer noopener">Live Site</a>
-                            <a class="dark:bg-lime-300 dark:text-lime-950 bg-lime-950 text-lime-100 flex justify-center items-center font-semibold py-2 px-3 rounded-lg" href="https://github.com/theAvocadoCoder/" target="_blank" rel="noreferrer noopener">Source Code</a>
-                        </div>
-                    </div>
-                </div>
+                <project-card
+                    name="Carmel Homes Ltd"
+                    description="This is the official website of Carmel Homes Ltd. This website, crafted using React, is designed to provide a seamless and informative experience for visitors."
+                    liveSite="https://carmelhomesltd.com"
+                    sourceCode="https://github.com/theAvocadoCoder/"
+                ></project-card>
             </div>
         </section>
 
@@ -336,6 +334,8 @@
     
     <footer></footer>
 
+    <!-- Template Config -->
+    <script type="module" src="template-config.js"></script>
     <!--  Script -->
     <script src="index.js"></script>
 </body>
