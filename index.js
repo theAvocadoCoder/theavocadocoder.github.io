@@ -58,11 +58,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     resumeObj.appendChild(downloadLink);
 
-    document.querySelector("#resume-bg-div>div").appendChild(resumeObj);
+    // document.querySelector("#resume-bg-div>div").appendChild(resumeObj);
 
 
     // Event Listeners
-    menuButton.addEventListener("click", toggleNav);
+    // menuButton.addEventListener("click", toggleNav);
 
     // Toggle the theme
     themeToggle.addEventListener("click", () => {
@@ -79,20 +79,20 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    contactForm.addEventListener("submit", handleContactSubmit);
+    // contactForm.addEventListener("submit", handleContactSubmit);
 
-    viewResume.addEventListener("click", toggleResume);
+    // viewResume.addEventListener("click", toggleResume);
 
-    downloadResume.addEventListener("click", () => {
-        const resumeLink = document.createElement("a");
-        resumeLink.style.display = "hidden";
-        document.body.appendChild(resumeLink);
-        resumeLink.setAttribute("href", resumeUrl);
-        resumeLink.setAttribute("download", "Kelechi_Nwa-uwa_Resume");
-        resumeLink.click();
-    })
+    // downloadResume.addEventListener("click", () => {
+    //     const resumeLink = document.createElement("a");
+    //     resumeLink.style.display = "hidden";
+    //     document.body.appendChild(resumeLink);
+    //     resumeLink.setAttribute("href", resumeUrl);
+    //     resumeLink.setAttribute("download", "Kelechi_Nwa-uwa_Resume");
+    //     resumeLink.click();
+    // })
 
-    closeResume.addEventListener("click", toggleResume);
+    // closeResume.addEventListener("click", toggleResume);
 
 
     // Functions
